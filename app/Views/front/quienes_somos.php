@@ -1,5 +1,5 @@
-<main>
-    <!-- Hero Section -->
+<main class="quienes-somos-section">
+    <!-- hero section -->
     <section class="quienesomos">
         <h1><i class="fas fa-users"></i> Conoce nuestro equipo</h1>
         <p>Somos un grupo de apasionados por el cine y la tecnología, comprometidos con brindarte la mejor experiencia de streaming.</p>
@@ -15,7 +15,7 @@
                     <img src="https://via.placeholder.com/400x500/333/fff?text=CEO" alt="CEO">
                 </div>
                 <div class="team-info">
-                    <h3>Juan Pérez</h3>
+                    <h3>Franco Montecino</h3>
                     <p class="role">CEO & Fundador</p>
                     <p>Visionario con más de 15 años en la industria del entretenimiento digital.</p>
                     <div class="team-social">
@@ -56,7 +56,7 @@
             </div>
         </div>
 
-        <!-- Historia y Valores -->
+        <!-- historia y valores -->
         <div class="history-values">
             <div class="history-card">
                 <h3><i class="fas fa-history"></i> Nuestra Historia</h3>

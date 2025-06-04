@@ -24,7 +24,7 @@
     <section class="destacado">
         <section class="movie-section">
             <div class="container-destacado">
-                <h2 class="section-title"><i class="fas fa-film"></i> Películas Populares</h2>
+                <h2 class="main-section-title"><i class="fas fa-film"></i> Películas Populares</h2>
                 <div class="movie-grid">
 
                     <div class="movie-card">
@@ -45,7 +45,7 @@
 
                     <div class="movie-card">
                         <div class="movie-cover">
-                            <img src="https://image.tmdb.org/t/p/original/tXQvtRWfkUUnWJAn2tN3jERIUG.jpg" alt="The Dark Knight">
+                            <img src="https://image.tmdb.org/t/p/original/tXQvtRWfkUUnWJAn2tN3jERIUG.jpg" alt="Inception">
                             <div class="movie-rating"><i class="fas fa-star"></i> 9.0</div>
                         </div>
                         <h3 class="movie-title">Inception</h3>
@@ -53,7 +53,7 @@
 
                     <div class="movie-card">
                         <div class="movie-cover">
-                            <img src="https://image.tmdb.org/t/p/original/aKuFiU82s5ISJpGZp7YkIr3kCUd.jpg" alt="The Dark Knight">
+                            <img src="https://image.tmdb.org/t/p/original/aKuFiU82s5ISJpGZp7YkIr3kCUd.jpg" alt="Goodfellas">
                             <div class="movie-rating"><i class="fas fa-star"></i> 9.8</div>
                         </div>
                         <h3 class="movie-title">Goodfellas</h3>
@@ -61,7 +61,7 @@
 
                     <div class="movie-card">
                         <div class="movie-cover">
-                            <img src="https://image.tmdb.org/t/p/original/lA9CNSdo50iQPZ8A2fyVpMvJZAf.jpg" alt="The Dark Knight">
+                            <img src="https://image.tmdb.org/t/p/original/lA9CNSdo50iQPZ8A2fyVpMvJZAf.jpg" alt="Twin Peaks">
                             <div class="movie-rating"><i class="fas fa-star"></i> 9.3</div>
                         </div>
                         <h3 class="movie-title">Twin Peaks</h3>
@@ -69,7 +69,7 @@
 
                     <div class="movie-card">
                         <div class="movie-cover">
-                            <img src="https://image.tmdb.org/t/p/original/vJZGpf0nZ4abnjY3vWzazmciatl.jpg" alt="The Dark Knight">
+                            <img src="https://image.tmdb.org/t/p/original/vJZGpf0nZ4abnjY3vWzazmciatl.jpg" alt="El Brutalista">
                             <div class="movie-rating"><i class="fas fa-star"></i> 8.9</div>
                         </div>
                         <h3 class="movie-title">El Brutalista</h3>
@@ -77,7 +77,7 @@
 
                     <div class="movie-card">
                         <div class="movie-cover">
-                            <img src="https://image.tmdb.org/t/p/original/bQ8eLmbZngrdgdzIzU7dPuh8HNR.jpg" alt="The Dark Knight">
+                            <img src="https://image.tmdb.org/t/p/original/bQ8eLmbZngrdgdzIzU7dPuh8HNR.jpg" alt="Conclave">
                             <div class="movie-rating"><i class="fas fa-star"></i> 7.1</div>
                         </div>
                         <h3 class="movie-title">Conclave</h3>
@@ -85,7 +85,7 @@
 
                     <div class="movie-card">
                         <div class="movie-cover">
-                            <img src="https://image.tmdb.org/t/p/original/2B2IcoSMpOa64Yw8DDtGzXdS4vl.jpg" alt="The Dark Knight">
+                            <img src="https://image.tmdb.org/t/p/original/2B2IcoSMpOa64Yw8DDtGzXdS4vl.jpg" alt="Fastastico Sr. Zorro">
                             <div class="movie-rating"><i class="fas fa-star"></i> 8.9</div>
                         </div>
                         <h3 class="movie-title">Fastastico Sr. Zorro</h3>
@@ -93,7 +93,7 @@
 
                     <div class="movie-card">
                         <div class="movie-cover">
-                            <img src="https://image.tmdb.org/t/p/original/nOd6vjEmzCT0k4VYqsA2hwyi87C.jpg" alt="The Dark Knight">
+                            <img src="https://image.tmdb.org/t/p/original/nOd6vjEmzCT0k4VYqsA2hwyi87C.jpg" alt="Requiem for a Dream">
                             <div class="movie-rating"><i class="fas fa-star"></i> 8.5</div>
                         </div>
                         <h3 class="movie-title">Requiem for a Dream</h3>
@@ -101,7 +101,7 @@
 
                     <div class="movie-card">
                         <div class="movie-cover">
-                            <img src="https://image.tmdb.org/t/p/original/neZ0ykEsPqxamsX6o5QNUFILQrz.jpg" alt="The Dark Knight">
+                            <img src="https://image.tmdb.org/t/p/original/neZ0ykEsPqxamsX6o5QNUFILQrz.jpg" alt="Akira">
                             <div class="movie-rating"><i class="fas fa-star"></i> 9.4</div>
                         </div>
                         <h3 class="movie-title">Akira</h3>

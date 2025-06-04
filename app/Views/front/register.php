@@ -17,13 +17,11 @@
             <div class="form-group password-container">
                 <label for="password"><i class="fas fa-lock"></i> Contraseña</label>
                 <input type="password" id="password" name="password" placeholder="••••••••" minlength="6" required>
-                <i class="fas fa-eye toggle-password" onclick="togglePassword('password')"></i>
             </div>
 
             <div class="form-group password-container">
                 <label for="repeat-password"><i class="fas fa-redo"></i> Repetir Contraseña</label>
                 <input type="password" id="repeat-password" name="repeat-password" placeholder="••••••••" required>
-                <i class="fas fa-eye toggle-password" onclick="togglePassword('repeat-password')"></i>
             </div>
 
             <div class="terms">

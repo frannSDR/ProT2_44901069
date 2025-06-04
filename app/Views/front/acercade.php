@@ -1,4 +1,4 @@
-<main>
+<main class="acercade-section">
     <!-- seccion acerca de -->
     <section class="acercade">
         <h1><i class="fas fa-info-circle"></i> Acerca de FilmStream</h1>

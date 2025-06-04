@@ -20,10 +20,10 @@
             <div class="footer-section">
                 <h3 class="footer-title">Enlaces Rápidos</h3>
                 <ul class="footer-links">
-                    <li><a href="<?= base_url('#') ?>"><i class="fas fa-film"></i> Películas</a></li>
-                    <li><a href="<?= base_url('#') ?>"><i class="fas fa-tv"></i> Series</a></li>
-                    <li><a href="<?= base_url('quienes-somos') ?>"><i class="fas fa-users"></i> Quiénes Somos</a></li>
-                    <li><a href="<?= base_url('acerca-de') ?>"><i class="fas fa-info-circle"></i> Acerca de</a></li>
+                    <li><a href="<?= base_url('peliculas') ?>"><i class="fas fa-film"></i> Películas</a></li>
+                    <li><a href="<?= base_url('series') ?>"><i class="fas fa-tv"></i> Series</a></li>
+                    <li><a href="<?= base_url('quienes_somos') ?>"><i class="fas fa-users"></i> Quiénes Somos</a></li>
+                    <li><a href="<?= base_url('acerca_de') ?>"><i class="fas fa-info-circle"></i> Acerca de</a></li>
                 </ul>
             </div>
 
