@@ -6,7 +6,7 @@ class Home extends BaseController
 {
     public function index(): string
     {
-        $data['titulo'] = "Home";
+        $data['titulo'] = "FilmStream | Películas y Series";
         return view('../Views/front/navbar', $data) .
             view('../Views/front/popular') .
             view('../Views/front/footer');
@@ -30,9 +30,9 @@ class Home extends BaseController
 
     public function login(): string
     {
-        $data['titulo'] = "Login";
+        $data['titulo'] = "Iniciar Sesion";
         return view('../Views/front/navbar', $data) .
-            view('../Views/front/login') .
+            view('../Views/Back/usuario/login') .
             view('../Views/front/footer');
     }
 
@@ -40,7 +40,7 @@ class Home extends BaseController
     {
         $data['titulo'] = "Registrarse";
         return view('../Views/front/navbar', $data) .
-            view('../Views/front/register') .
+            view('../Views/Back/usuario/register') .
             view('../Views/front/footer');
     }
 
