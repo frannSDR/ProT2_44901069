@@ -8,7 +8,9 @@ use CodeIgniter\Router\RouteCollection;
 
 $routes->get('/', 'Home::index');
 
-$routes->get('peliculas', 'Home::peliculas');
+$routes->get('peliculas', 'Admin_controllers\Movies_controller::list_movies');
+
+$routes->get('/pelicula/(:num)', 'Admin_controllers\Movies_controller::movie_detail/$1');
 
 $routes->get('series', 'Home::series');
 

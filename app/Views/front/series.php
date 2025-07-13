@@ -4,13 +4,13 @@
         <h3><i class="fas fa-filter"></i> Filtros</h3>
 
         <!-- barra de busqueda -->
-        <div class="filter-group">
+        <div class="media-filter-group">
             <label for="search"><i class="fas fa-search"></i> Buscar</label>
             <input type="text" id="search" placeholder="Nombre de la serie...">
         </div>
 
         <!-- categorias -->
-        <div class="filter-group">
+        <div class="media-filter-group">
             <h4><i class="fas fa-tags"></i> Géneros</h4>
             <ul class="filter-list">
                 <li><a href="#" class="active">Todas</a></li>
@@ -23,7 +23,7 @@
         </div>
 
         <!-- año -->
-        <div class="filter-group">
+        <div class="media-filter-group">
             <h4><i class="fas fa-calendar-alt"></i> Año</h4>
             <select class="form-select">
                 <option selected>Todos</option>
@@ -34,7 +34,7 @@
         </div>
 
         <!-- valoracion -->
-        <div class="filter-group">
+        <div class="media-filter-group">
             <h4><i class="fas fa-star"></i> Valoracion Minima</h4>
             <div class="rating-filter">
                 <input type="range" min="0" max="10" value="7" step="0.5">

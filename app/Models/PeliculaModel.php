@@ -13,18 +13,17 @@ class PeliculaModel extends Model
         'titulo',
         'titulo_original',
         'sinopsis',
+        'director',
+        'reparto',
         'año',
         'duracion',
         'clasificacion',
         'poster',
+        'banner',
         'trailer',
         'valoracion',
-        'fecha_estreno',
         'magnet_link',
-        'torrent_hash',
-        'archivo_torrent',
         'calidad',
-        'tamaño_mb',
         'activa'
     ];
 

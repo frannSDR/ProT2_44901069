@@ -4,13 +4,13 @@
         <h3><i class="fas fa-filter"></i> Filtros</h3>
 
         <!-- barra de busqueda -->
-        <div class="filter-group">
+        <div class="media-filter-group">
             <label for="search"><i class="fas fa-search"></i> Buscar</label>
             <input type="text" id="search" placeholder="Nombre de película...">
         </div>
 
         <!-- categorias -->
-        <div class="filter-group">
+        <div class="media-filter-group">
             <h4><i class="fas fa-tags"></i> Géneros</h4>
             <ul class="filter-list">
                 <li><a href="#" class="active">Todas</a></li>
@@ -23,7 +23,7 @@
         </div>
 
         <!-- año -->
-        <div class="filter-group">
+        <div class="media-filter-group">
             <h4><i class="fas fa-calendar-alt"></i> Año</h4>
             <select class="form-select">
                 <option selected>Todos</option>
@@ -34,7 +34,7 @@
         </div>
 
         <!-- valoracion -->
-        <div class="filter-group">
+        <div class="media-filter-group">
             <h4><i class="fas fa-star"></i> Valoracion Minima</h4>
             <div class="rating-filter">
                 <input type="range" min="0" max="10" value="7" step="0.5">
@@ -58,22 +58,23 @@
         </div>
 
         <div class="grid-content">
-            <div class="movie-card">
-                <div class="movie-cover">
-                    <img src="https://image.tmdb.org/t/p/original/fbUwSqYIP0isCiJXey3staY3DNn.jpg" alt="Interstellar">
-                    <div class="movie-rating"><i class="fas fa-star"></i> 8.6</div>
-                </div>
-                <h3 class="movie-title">Interstellar</h3>
-                <p class="movie-genre">Ciencia Ficción · 2014</p>
-            </div>
-            <div class="movie-card">
-                <div class="movie-cover">
-                    <img src="https://image.tmdb.org/t/p/original/8QDQExnfNFOtabLDKqfDQuHDsIg.jpg" alt="The Dark Knight">
-                    <div class="movie-rating"><i class="fas fa-star"></i> 9.0</div>
-                </div>
-                <h3 class="movie-title">The Dark Knight</h3>
-                <p class="movie-genre">Acción · 2008</p>
-            </div>
+            <?php foreach ($movies as $movie): ?>
+                <?php if ($movie['activa'] == true): ?>
+                    <div class="movie-card">
+                        <div class="movie-cover">
+                            <img src="<?= $movie['poster'] ?>" alt="<?= $movie['titulo'] ?>">
+                            <div class="movie-rating"><i class="fas fa-star"></i> <?= $movie['valoracion'] ?></div>
+                        </div>
+                        <h3 class="menu-movie-title"><a href="<?= base_url('pelicula/' . $movie['movie_id']) ?>"><?= esc($movie['titulo']) ?></a></h3>
+                        <p class="movie-genre">
+                            <?php foreach ($movie['generos'] as $index => $genero): ?>
+                                <?= esc($genero['nombre']) ?>
+                                <?= $index < count($movie['generos']) - 1 ? '·' : '' ?>
+                            <?php endforeach; ?>
+                            · <?= $movie['año'] ?></p>
+                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
         </div>
 
         <!-- paginacion -->

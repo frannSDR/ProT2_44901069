@@ -1,0 +1,304 @@
+DEBUG - 2025-07-12 17:17:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-12 17:17:17 --> Error: Class "Codeigniter\Controller" not found
+[Method: GET, Route: peliculas]
+in APPPATH\Controllers\Admin_controllers\Movies_controller.php on line 10.
+ 1 SYSTEMPATH\Autoloader\Autoloader.php(316): include_once()
+ 2 SYSTEMPATH\Autoloader\Autoloader.php(295): CodeIgniter\Autoloader\Autoloader->includeFile('C:\\xampp\\htdocs\\FilmStream\\app\\Controllers\\Admin_controllers\\Movies_controller.php')
+ 3 SYSTEMPATH\Autoloader\Autoloader.php(271): CodeIgniter\Autoloader\Autoloader->loadInNamespace('App\\Controllers\\Admin_controllers\\Movies_controller')
+ 4 [internal function]: CodeIgniter\Autoloader\Autoloader->loadClass('App\\Controllers\\Admin_controllers\\Movies_controller')
+ 5 SYSTEMPATH\CodeIgniter.php(885): class_exists('\\App\\Controllers\\Admin_controllers\\Movies_controller', true)
+ 6 SYSTEMPATH\CodeIgniter.php(494): CodeIgniter\CodeIgniter->startController()
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-12 17:18:17 --> CodeIgniter\View\Exceptions\ViewException: Invalid file: "../../Views/front/navbar.php"
+[Method: GET, Route: peliculas]
+in SYSTEMPATH\Exceptions\FrameworkException.php on line 39.
+ 1 SYSTEMPATH\View\View.php(212): CodeIgniter\Exceptions\FrameworkException::forInvalidFile('../../Views/front/navbar.php')
+ 2 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('../../Views/front/navbar', [], true)
+ 3 APPPATH\Controllers\Admin_controllers\Movies_controller.php(82): view('../../Views/front/navbar', [...])
+ 4 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->list_movies()
+ 5 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+ 6 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 9 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-12 17:18:39 --> ErrorException: Undefined variable $titulo
+[Method: GET, Route: peliculas]
+in APPPATH\Views\front\navbar.php on line 7.
+ 1 APPPATH\Views\front\navbar.php(7): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $titulo', 'C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\navbar.php', 7)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\navbar.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Views/front/navbar', [], true)
+ 5 APPPATH\Controllers\Admin_controllers\Movies_controller.php(82): view('Views/front/navbar', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->list_movies()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-12 17:19:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 19:17:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-12 19:17:01 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: peliculas]
+in APPPATH\Views\front\peliculas.php on line 62.
+ 1 APPPATH\Views\front\peliculas.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\peliculas.php', 62)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\peliculas.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Views/front/peliculas', [], true)
+ 5 APPPATH\Controllers\Admin_controllers\Movies_controller.php(84): view('Views/front/peliculas', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->list_movies()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-07-12 19:17:35 --> mysqli_sql_exception: Unknown column 'is_active' in 'field list' in C:\xampp\htdocs\FilmStream\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\FilmStream\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `movie_i...', 0)
+#1 C:\xampp\htdocs\FilmStream\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `movie_i...')
+#2 C:\xampp\htdocs\FilmStream\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `movie_i...')
+#3 C:\xampp\htdocs\FilmStream\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `movie_i...', Array, false)
+#4 C:\xampp\htdocs\FilmStream\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\FilmStream\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(18, 0)
+#6 C:\xampp\htdocs\FilmStream\system\BaseModel.php(1291): CodeIgniter\BaseModel->findAll(18, 0)
+#7 C:\xampp\htdocs\FilmStream\app\Controllers\Admin_controllers\Movies_controller.php(44): CodeIgniter\BaseModel->paginate(18, 'movies', 1)
+#8 C:\xampp\htdocs\FilmStream\system\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->list_movies()
+#9 C:\xampp\htdocs\FilmStream\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+#10 C:\xampp\htdocs\FilmStream\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\xampp\htdocs\FilmStream\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#12 C:\xampp\htdocs\FilmStream\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\xampp\htdocs\FilmStream\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 {main}
+CRITICAL - 2025-07-12 19:17:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'is_active' in 'field list'
+[Method: GET, Route: peliculas]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `movie_id`, `titulo`, `año`, `poster`, `valoracion`, `is_active`
+FROM `peliculas`
+ORDER BY `titulo` ASC
+ LIMIT 18', [], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(18, 0)
+ 4 SYSTEMPATH\BaseModel.php(1291): CodeIgniter\BaseModel->findAll(18, 0)
+ 5 APPPATH\Controllers\Admin_controllers\Movies_controller.php(44): CodeIgniter\BaseModel->paginate(18, 'movies', 1)
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->list_movies()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-12 19:17:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'is_active' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `movie_id`, `titulo`, `año`, `poster`, `valoracion`, `is_active`
+FROM `peliculas`
+ORDER BY `titulo` ASC
+ LIMIT 18')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `movie_id`, `titulo`, `año`, `poster`, `valoracion`, `is_active`
+FROM `peliculas`
+ORDER BY `titulo` ASC
+ LIMIT 18')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `movie_id`, `titulo`, `año`, `poster`, `valoracion`, `is_active`
+FROM `peliculas`
+ORDER BY `titulo` ASC
+ LIMIT 18', [], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(18, 0)
+ 6 SYSTEMPATH\BaseModel.php(1291): CodeIgniter\BaseModel->findAll(18, 0)
+ 7 APPPATH\Controllers\Admin_controllers\Movies_controller.php(44): CodeIgniter\BaseModel->paginate(18, 'movies', 1)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->list_movies()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-12 19:17:35 --> [Caused by] mysqli_sql_exception: Unknown column 'is_active' in 'field list'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `movie_id`, `titulo`, `año`, `poster`, `valoracion`, `is_active`
+FROM `peliculas`
+ORDER BY `titulo` ASC
+ LIMIT 18', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `movie_id`, `titulo`, `año`, `poster`, `valoracion`, `is_active`
+FROM `peliculas`
+ORDER BY `titulo` ASC
+ LIMIT 18')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `movie_id`, `titulo`, `año`, `poster`, `valoracion`, `is_active`
+FROM `peliculas`
+ORDER BY `titulo` ASC
+ LIMIT 18')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `movie_id`, `titulo`, `año`, `poster`, `valoracion`, `is_active`
+FROM `peliculas`
+ORDER BY `titulo` ASC
+ LIMIT 18', [], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(18, 0)
+ 7 SYSTEMPATH\BaseModel.php(1291): CodeIgniter\BaseModel->findAll(18, 0)
+ 8 APPPATH\Controllers\Admin_controllers\Movies_controller.php(44): CodeIgniter\BaseModel->paginate(18, 'movies', 1)
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->list_movies()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-12 19:17:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-12 19:17:59 --> ErrorException: Undefined array key "is_active"
+[Method: GET, Route: peliculas]
+in APPPATH\Views\front\peliculas.php on line 62.
+ 1 APPPATH\Views\front\peliculas.php(62): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "is_active"', 'C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\peliculas.php', 62)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\peliculas.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Views/front/peliculas', [], true)
+ 5 APPPATH\Controllers\Admin_controllers\Movies_controller.php(84): view('Views/front/peliculas', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->list_movies()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-12 19:18:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 19:18:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 19:18:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 19:21:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 19:22:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 19:22:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 19:22:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 19:23:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-12 19:23:16 --> ErrorException: Array to string conversion
+[Method: GET, Route: peliculas]
+in APPPATH\Views\front\peliculas.php on line 69.
+ 1 APPPATH\Views\front\peliculas.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\peliculas.php', 69)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\peliculas.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Views/front/peliculas', [], true)
+ 5 APPPATH\Controllers\Admin_controllers\Movies_controller.php(84): view('Views/front/peliculas', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->list_movies()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-12 19:23:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 19:23:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-12 19:23:20 --> ErrorException: Array to string conversion
+[Method: GET, Route: peliculas]
+in APPPATH\Views\front\peliculas.php on line 69.
+ 1 APPPATH\Views\front\peliculas.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\peliculas.php', 69)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\peliculas.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Views/front/peliculas', [], true)
+ 5 APPPATH\Controllers\Admin_controllers\Movies_controller.php(84): view('Views/front/peliculas', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->list_movies()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-12 19:23:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-12 19:23:21 --> ErrorException: Array to string conversion
+[Method: GET, Route: peliculas]
+in APPPATH\Views\front\peliculas.php on line 69.
+ 1 APPPATH\Views\front\peliculas.php(69): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', 'C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\peliculas.php', 69)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\peliculas.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Views/front/peliculas', [], true)
+ 5 APPPATH\Controllers\Admin_controllers\Movies_controller.php(84): view('Views/front/peliculas', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->list_movies()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-12 19:26:49 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-12 19:26:49 --> ErrorException: Undefined variable $juego
+[Method: GET, Route: peliculas]
+in APPPATH\Views\front\peliculas.php on line 89.
+ 1 APPPATH\Views\front\peliculas.php(89): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $juego', 'C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\peliculas.php', 89)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\peliculas.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Views/front/peliculas', [], true)
+ 5 APPPATH\Controllers\Admin_controllers\Movies_controller.php(84): view('Views/front/peliculas', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->list_movies()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-12 19:27:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 20:31:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 20:32:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 20:33:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 20:53:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 20:54:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 20:54:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 21:21:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 21:21:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 21:23:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 21:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 21:41:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 21:41:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 21:42:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 21:57:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 21:57:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-12 21:57:27 --> ErrorException: Undefined array key "generos"
+[Method: GET, Route: pelicula/1]
+in APPPATH\Views\front\seccion_pelicula.php on line 21.
+ 1 APPPATH\Views\front\seccion_pelicula.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "generos"', 'C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\seccion_pelicula.php', 21)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\seccion_pelicula.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Views/front/seccion_pelicula', [], true)
+ 5 APPPATH\Controllers\Admin_controllers\Movies_controller.php(105): view('Views/front/seccion_pelicula', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->movie_detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-12 21:57:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 22:50:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 22:51:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 22:51:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-12 22:51:34 --> ErrorException: Undefined array key "generos"
+[Method: GET, Route: pelicula/10]
+in APPPATH\Views\front\seccion_pelicula.php on line 21.
+ 1 APPPATH\Views\front\seccion_pelicula.php(21): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "generos"', 'C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\seccion_pelicula.php', 21)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\seccion_pelicula.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Views/front/seccion_pelicula', [], true)
+ 5 APPPATH\Controllers\Admin_controllers\Movies_controller.php(105): view('Views/front/seccion_pelicula', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->movie_detail('10')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-12 22:54:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 22:57:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 22:57:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 22:57:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 22:57:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 22:57:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 22:57:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 22:59:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:00:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:00:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:02:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:02:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:02:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:04:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:05:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:18:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:39:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:39:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:39:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:39:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:39:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:39:58 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:40:07 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:48:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:51:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:52:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:52:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:55:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:56:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:57:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-12 23:59:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

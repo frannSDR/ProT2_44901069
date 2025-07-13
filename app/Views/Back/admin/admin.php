@@ -29,7 +29,7 @@
                 <i class="fas fa-users"></i>
             </div>
             <div class="stat-info">
-                <h3>2,850</h3>
+                <h3><?= $total_usuarios ?></h3>
                 <p>Usuarios</p>
             </div>
         </div>

@@ -200,16 +200,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // ejemplo: si estamos en "http://localhost/FilmStream/admin/usuarios"
     // esta funcion nos devuelve "http://localhost/FilmStream/"
     function getBaseUrl() {
-    const metaBase = document.querySelector('meta[name="base-url"]');
-    
-    if (metaBase) {
-        return metaBase.getAttribute('content');
-    } else {
-        // si no hay meta tag, mostrar error
-        console.error('Meta tag base-url no encontrado');
-        return '/'; // URL por defecto
+        const metaBase = document.querySelector('meta[name="base-url"]');
+        
+        if (metaBase) {
+            return metaBase.getAttribute('content');
+        } else {
+            // si no hay meta tag, mostrar error
+            console.error('Meta tag base-url no encontrado');
+            return '/'; // URL por defecto
+        }
     }
-}
 
     //* EVENTO: cerramos el modal si se hace click afuera del mismo
     window.addEventListener('click', function(event) {
@@ -237,5 +237,66 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
     });
+
+    // Funciones del reproductor
+    const playBtn = document.getElementById('play-movie-btn');
+    const playerContainer = document.getElementById('movie-player-container');
+    const closeBtn = document.getElementById('close-player-btn');
+    const fullscreenBtn = document.getElementById('fullscreen-btn');
+
+    // Mostrar reproductor
+    if (playBtn) {
+        playBtn.addEventListener('click', function() {
+            if (window.magnetLink) {
+                playerContainer.style.display = 'block';
+                playBtn.style.display = 'none';
+                // Aquí se integrará WebTorrent cuando lo implementes
+                initializePlayer();
+            } else {
+                alert('Esta película no está disponible para reproducir en línea.');
+            }
+        });
+    }
+
+    // Cerrar reproductor
+    if (closeBtn) {
+        closeBtn.addEventListener('click', function() {
+            playerContainer.style.display = 'none';
+            playBtn.style.display = 'inline-flex';
+            // Detener reproducción
+            stopPlayer();
+        });
+    }
+
+    // Pantalla completa
+    if (fullscreenBtn) {
+        fullscreenBtn.addEventListener('click', function() {
+            const videoElement = document.querySelector('#video-player video');
+            if (videoElement) {
+                if (videoElement.requestFullscreen) {
+                    videoElement.requestFullscreen();
+                } else if (videoElement.webkitRequestFullscreen) {
+                    videoElement.webkitRequestFullscreen();
+                }
+            }
+        });
+    }
+
+    function initializePlayer() {
+        // Aquí irá la lógica de WebTorrent
+        document.getElementById('loading-text').textContent = 'Conectando...';
+
+        // Simulación de carga (remover cuando implementes WebTorrent)
+        setTimeout(() => {
+            document.querySelector('.player-loading').style.display = 'none';
+            document.getElementById('video-player').innerHTML = '<p style="text-align: center; color: #ccc; padding: 2rem;">Reproductor listo para WebTorrent</p>';
+        }, 2000);
+    }
+
+    function stopPlayer() {
+        // Aquí irá la lógica para detener WebTorrent
+        document.querySelector('.player-loading').style.display = 'flex';
+        document.getElementById('video-player').innerHTML = '';
+    }
 
 });

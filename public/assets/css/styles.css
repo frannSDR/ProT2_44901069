@@ -17,11 +17,12 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #1a1a1a;
+    min-height: 100vh;
+    background: #1a1a1a;
 }
 
 header {
@@ -524,19 +525,19 @@ header {
     gap: 10px;
 }
 
-.filter-group {
+.media-filter-group {
     margin-bottom: 1.8rem;
 }
 
-.filter-group label {
+.media-filter-group label {
     display: block;
     margin-bottom: 0.5rem;
     color: var(--color-text);
     font-weight: 500;
 }
 
-.filter-group input[type="text"],
-.filter-group .form-select {
+.media-filter-group input[type="text"],
+.media-filter-group .form-select {
     width: 100%;
     padding: 0.5rem;
     background: var(--card-bg-color);
@@ -545,7 +546,7 @@ header {
     color: var(--color-text);
 }
 
-.filter-group h4 {
+.media-filter-group h4 {
     color: var(--color-text);
     font-size: 1rem;
     margin-bottom: 0.8rem;
@@ -659,7 +660,7 @@ header {
     font-size: 0.9rem;
 }
 
-.movie-title {
+.menu-movie-title {
     color: var(--color-text);
     padding: 0.8rem;
     font-size: 0.95rem;
@@ -667,6 +668,16 @@ header {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+.menu-movie-title a {
+    text-decoration: none;
+    color: var(--color-text);
+    transition: all 0.3s ease;
+}
+
+.menu-movie-title a:hover {
+    color: var(--amarillo);
 }
 
 .movie-genre {
@@ -1641,7 +1652,6 @@ header {
     border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s;
-    font-size: 0.9rem;
 }
 
 .page-btn:hover:not(:disabled) {
@@ -1724,36 +1734,895 @@ header {
     justify-content: flex-end;
 }
 
-/* responsive */
+/*! -------------------------------- SECCION-PELICULA --------------------------- */
+
+/* Contenedor wrapper para toda la sección */
+.movie-detail-wrapper {
+    background-color: var(--main-background-color);
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Banner de la película */
+.movie-banner {
+    position: relative;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 2rem;
+}
+
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to top,
+        rgba(15, 15, 15, 0.9) 0%,
+        rgba(15, 15, 15, 0.7) 50%,
+        rgba(15, 15, 15, 0.3) 100%
+    );
+}
+
+.banner-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    color: var(--color-text);
+}
+
+.banner-content h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: var(--amarillo);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.banner-rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.banner-rating .stars {
+    color: var(--amarillo);
+    font-size: 1.5rem;
+}
+
+.banner-rating .rating-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--color-text);
+}
+
+/* Contenedor principal */
+.contenedor-principal {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.contenido-principal {
+    background: var(--card-bg-color);
+    border-radius: 12px;
+    padding: 2rem;
+}
+
+/* Header de la película */
+.movie-header {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.movie-cover {
+    flex-shrink: 0;
+}
+
+.cover-image {
+    width: 250px;
+    height: 370px;
+    max-width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.movie-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.movie-section-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--color-text);
+}
+
+.meta-item i {
+    color: var(--amarillo);
+}
+
+.movie-description {
+    flex: 1;
+}
+
+.movie-description p {
+    line-height: 1.6;
+    color: var(--color-text);
+    opacity: 0.9;
+}
+
+.movie-info-extra {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.info-tag {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--amarillo);
+    color: var(--main-background-color);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.info-tag.original-title {
+    background: var(--border-color);
+    color: var(--color-text);
+}
+
+.info-tag.quality {
+    background: #28a745;
+    color: white;
+}
+
+.movie-synopsis {
+    color: var(--color-text);
+}
+
+/* Títulos de sección */
+.titulo-sinopsis {
+    color: var(--amarillo);
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--border-color);
+}
+
+/* Contenedor de trailer */
+.visuales-container {
+    margin-bottom: 2rem;
+}
+
+.trailer-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.trailer-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Sección de reseñas */
+.seccion-resenas {
+    margin-top: 3rem;
+}
+
+.estadisticas-resenas {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.puntuacion-general {
+    display: inline-block;
+}
+
+.puntuacion-numero {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--amarillo);
+    margin-bottom: 0.5rem;
+}
+
+.estrellas {
+    margin-bottom: 0.5rem;
+}
+
+.estrellas i {
+    font-size: 1.5rem;
+    margin: 0 2px;
+    color: var(--amarillo);
+}
+
+.estrellas i.far {
+    color: var(--border-color);
+}
+
+.total-resenas {
+    color: var(--color-text);
+    opacity: 0.8;
+}
+
+/* Filtros de reseñas */
+.filtros-resenas {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.selector-orden {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.selector-orden label {
+    color: var(--color-text);
+}
+
+.selector-orden select {
+    background: var(--main-background-color);
+    color: var(--color-text);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.5rem;
+}
+
+.filtro-estrellas {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.filtro-texto {
+    color: var(--color-text);
+    opacity: 0.8;
+}
+
+.boton-filtro {
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.boton-filtro:hover,
+.boton-filtro.activo {
+    background: var(--amarillo);
+    color: var(--main-background-color);
+    border-color: var(--amarillo);
+}
+
+/* Lista de reseñas */
+.lista-resenas {
+    margin-bottom: 2rem;
+}
+
+.resena-item {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-left: 4px solid var(--amarillo);
+}
+
+.resena-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.usuario-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.usuario-avatar {
+    width: 50px;
+    height: 50px;
+    background: var(--amarillo);
+    color: var(--main-background-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.usuario-datos h4 {
+    color: var(--color-text);
+    margin: 0;
+    font-size: 1rem;
+}
+
+.fecha-resena {
+    color: var(--color-text);
+    opacity: 0.6;
+    font-size: 0.8rem;
+}
+
+.puntuacion-resena {
+    text-align: right;
+}
+
+.estrellas-resena {
+    margin-bottom: 0.3rem;
+}
+
+.estrellas-resena i {
+    color: var(--amarillo);
+    font-size: 0.9rem;
+}
+
+.estrellas-resena i.far {
+    color: var(--border-color);
+}
+
+.puntuacion-numero {
+    font-size: 0.9rem;
+    color: var(--color-text);
+    opacity: 0.8;
+}
+
+.resena-contenido h5 {
+    color: var(--amarillo);
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.resena-contenido p {
+    color: var(--color-text);
+    line-height: 1.6;
+    margin: 0;
+    opacity: 0.9;
+}
+
+.resena-acciones {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.boton-util,
+.boton-responder {
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.4rem 0.8rem;
+    cursor: pointer;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: all 0.3s;
+}
+
+.boton-util:hover,
+.boton-responder:hover {
+    background: var(--amarillo);
+    color: var(--main-background-color);
+    border-color: var(--amarillo);
+}
+
+/* Formulario de reseña */
+.formulario-resena-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.formulario-resena {
+    background: var(--card-bg-color);
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.encabezado-formulario {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.encabezado-formulario h3 {
+    color: var(--amarillo);
+    margin: 0;
+}
+
+.boton-cerrar {
+    background: transparent;
+    color: var(--color-text);
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+.boton-cerrar:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.grupo-formulario {
+    margin-bottom: 1.5rem;
+}
+
+.grupo-formulario label {
+    display: block;
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.grupo-formulario input,
+.grupo-formulario textarea {
+    width: 100%;
+    background: var(--main-background-color);
+    color: var(--color-text);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    padding: 0.8rem;
+    font-size: 1rem;
+}
+
+.grupo-formulario input:focus,
+.grupo-formulario textarea:focus {
+    outline: none;
+    border-color: var(--amarillo);
+    box-shadow: 0 0 0 2px rgba(255, 195, 0, 0.2);
+}
+
+.rating-estrellas {
+    display: flex;
+    gap: 0.3rem;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+}
+
+.rating-estrellas input {
+    display: none;
+}
+
+.rating-estrellas .estrella {
+    font-size: 2rem;
+    color: var(--border-color);
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.rating-estrellas input:checked ~ .estrella,
+.rating-estrellas .estrella:hover,
+.rating-estrellas .estrella:hover ~ .estrella {
+    color: var(--amarillo);
+}
+
+.acciones-formulario {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.boton-secundario,
+.boton-primario {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    flex: 1;
+}
+
+.boton-secundario {
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--border-color);
+}
+
+.boton-secundario:hover {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.boton-primario {
+    background: var(--amarillo);
+    color: var(--main-background-color);
+}
+
+.boton-primario:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+
+/* Sección del reproductor */
+.player-section {
+    margin: 2rem 0;
+}
+
+.player-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.play-movie-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: linear-gradient(135deg, var(--amarillo), #ffb300);
+    color: var(--main-background-color);
+    border: none;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(255, 195, 0, 0.3);
+}
+
+.play-movie-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 195, 0, 0.4);
+}
+
+.play-movie-button i {
+    font-size: 1.2rem;
+}
+
+.player-info {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.quality-info,
+.file-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text);
+    opacity: 0.8;
+    font-size: 0.9rem;
+}
+
+.quality-info i,
+.file-info i {
+    color: var(--amarillo);
+}
+
+.movie-player-container {
+    background: var(--main-background-color);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+    border: 1px solid var(--border-color);
+}
+
+.player-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.player-header h3 {
+    color: var(--amarillo);
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.close-player-button {
+    background: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+
+.close-player-button:hover {
+    background: #c82333;
+    transform: scale(1.05);
+}
+
+.video-player {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    aspect-ratio: 16/9;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.player-loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    color: var(--color-text);
+    text-align: center;
+    padding: 2rem;
+}
+
+.loading-spinner i {
+    font-size: 3rem;
+    color: var(--amarillo);
+    margin-bottom: 1rem;
+}
+
+.loading-progress {
+    width: 100%;
+    max-width: 300px;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 4px;
+    background: var(--border-color);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--amarillo);
+    width: 0%;
+    transition: width 0.3s;
+}
+
+#loading-text {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.player-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.02);
+    padding: 1rem 1.5rem;
+    border-top: 1px solid var(--border-color);
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.player-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--color-text);
+    font-size: 0.85rem;
+    opacity: 0.8;
+}
+
+.stat-item i {
+    color: var(--amarillo);
+}
+
+.player-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.85rem;
+}
+
+.action-button:hover {
+    background: var(--amarillo);
+    color: var(--main-background-color);
+    border-color: var(--amarillo);
+}
+
+.no-player-message {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    border: 1px dashed var(--border-color);
+}
+
+.no-player-message i {
+    font-size: 3rem;
+    color: #ffc107;
+    margin-bottom: 1rem;
+}
+
+.no-player-message h4 {
+    color: var(--color-text);
+    margin-bottom: 0.5rem;
+}
+
+.no-player-message p {
+    color: var(--color-text);
+    opacity: 0.7;
+    margin: 0;
+}
+
 @media (max-width: 768px) {
-    .admin-header-content {
+    /* Responsive para sección de películas */
+    .banner-content h1 {
+        font-size: 2rem;
+    }
+
+    .movie-header {
         flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .header-right {
-        justify-content: center;
-    }
-    
-    .filter-group {
-        flex-direction: column;
-        align-items: stretch;
-    }
-    
-    .search-input {
-        min-width: auto;
-    }
-    
-    .users-table-container {
-        overflow-x: auto;
-    }
-    
-    .users-table {
-        min-width: 800px;
-    }
-    
-    .pagination-container {
-        flex-direction: column;
+        align-items: center;
         text-align: center;
     }
+
+    .cover-image {
+        width: 200px;
+        height: 300px;
+        max-width: 90%;
+        max-height: 350px;
+    }
+
+    .movie-section-meta {
+        justify-content: center;
+    }
+
+    .movie-info-extra {
+        justify-content: center;
+    }
+
+    .filtros-resenas {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .resena-header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .puntuacion-resena {
+        text-align: left;
+    }
+
+    .formulario-resena-container {
+        padding: 1rem;
+    }
+
+    .acciones-formulario {
+        flex-direction: column;
+    }
+
+    /* Player responsive */
+    .player-controls {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .player-info {
+        justify-content: center;
+    }
+
+    .player-footer {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .player-stats {
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .player-actions {
+        justify-content: center;
+    }
+
+    .action-button {
+        flex: 1;
+        justify-content: center;
+    }
+
+    .video-player {
+        min-height: 250px;
+    }
+
+    .play-movie-button {
+        width: 100%;
+        justify-content: center;
+    }
 }
+
