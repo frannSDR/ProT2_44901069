@@ -17,8 +17,8 @@
         <div class="contenedor-principal">
             <div class="contenido-principal">
                 <div class="movie-header">
-                    <div class="movie-cover">
-                        <img src="<?= $movie['poster'] ?>" alt="Portada de <?= esc($movie['titulo']) ?>" class="cover-image">
+                    <div class="detail-movie-cover">
+                        <img src="<?= $movie['poster'] ?>" alt="Portada de <?= esc($movie['titulo']) ?>" class="detail-cover-image">
                     </div>
                     <div class="movie-details">
                         <div class="movie-section-meta">
@@ -65,56 +65,39 @@
                     <?php endif; ?>
                 </div>
 
-                <!-- Reproductor de película mejorado -->
+                <!-- Reproductor de película -->
+                <?php $streamsPorIdioma = []; ?>
+                <?php
+                foreach ($streams as $stream) {
+                    $streamsPorIdioma[$stream['idioma']][] = $stream;
+                }
+                ?>
+
                 <h2 class="titulo-sinopsis" style="margin-top: 30px;">Reproducir Película</h2>
                 <div class="player-section">
                     <div class="player-language-options">
-                        <div class="language-tab active" data-language="subtitled">Subtitulado</div>
-                        <div class="language-tab" data-language="latino">Español Latino</div>
+                        <?php foreach ($streamsPorIdioma as $idioma => $lista): ?>
+                            <div class="language-tab <?= $idioma === 'lat' ? 'active' : '' ?>" data-language="<?= esc($idioma) ?>"><?= $idioma === 'sub' ? 'Subtitulado' : 'Espanol Latino' ?></div>
+                        <?php endforeach; ?>
                     </div>
 
                     <!-- Opciones para Subtitulado -->
-                    <div class="server-options active" data-language="subtitled">
-                        <div class="server-option">
-                            <div class="server-name"><i class="fas fa-server"></i> Servidor Premium</div>
-                            <div class="server-quality">Calidad: 1080p</div>
-                            <button class="play-server-btn">
-                                <i class="fas fa-play"></i> Reproducir
-                            </button>
+                    <?php foreach ($streamsPorIdioma as $idioma => $lista): ?>
+                        <div class="server-options <?= $idioma === 'lat' ? ' active' : '' ?>" data-language="<?= esc($idioma) ?>">
+                            <?php foreach ($lista as $stream): ?>
+                                <div class="server-option">
+                                    <div class="server-name"><i class="fas fa-server"></i> <?= esc($stream['server']) ?></div>
+                                    <div class="server-quality">Calidad: <?= esc($stream['calidad']) ?></div>
+                                    <button class="play-server-btn" data-url="<?= esc($stream['stream_url']) ?>">
+                                        <i class="fas fa-play"></i> Reproducir
+                                    </button>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
-                        <div class="server-option">
-                            <div class="server-name"><i class="fas fa-server"></i> Servidor Rápido</div>
-                            <div class="server-quality">Calidad: 720p</div>
-                            <button class="play-server-btn">
-                                <i class="fas fa-play"></i> Reproducir
-                            </button>
-                        </div>
-                        <div class="server-option">
-                            <div class="server-name"><i class="fas fa-server"></i> Servidor Alterno</div>
-                            <div class="server-quality">Calidad: 480p</div>
-                            <button class="play-server-btn">
-                                <i class="fas fa-play"></i> Reproducir
-                            </button>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
 
-                    <!-- Opciones para Español Latino -->
-                    <div class="server-options" data-language="latino">
-                        <div class="server-option">
-                            <div class="server-name"><i class="fas fa-server"></i> Servidor Latino 1</div>
-                            <div class="server-quality">Calidad: 1080p</div>
-                            <button class="play-server-btn">
-                                <i class="fas fa-play"></i> Reproducir
-                            </button>
-                        </div>
-                        <div class="server-option">
-                            <div class="server-name"><i class="fas fa-server"></i> Servidor Latino 2</div>
-                            <div class="server-quality">Calidad: 720p</div>
-                            <button class="play-server-btn">
-                                <i class="fas fa-play"></i> Reproducir
-                            </button>
-                        </div>
-                    </div>
+                    <!-- Contenedor para el reproductor -->
+                    <div id="video-player" class="video-player-container" style="margin-top:20px;"></div>
                 </div>
 
                 <!-- reseñas de usuarios -->
@@ -123,7 +106,7 @@
 
                     <div class="estadisticas-resenas">
                         <div class="puntuacion-general">
-                            <div class="puntuacion-numero"><?= number_format($movie['valoracion'], 1) ?></div>
+                            <div class="puntuacion-numero"><?= (number_format($movie['valoracion'], 1) / 2) ?></div>
                             <div class="estrellas">
                                 <?php
                                 $estrellasLlenas = floor($movie['valoracion'] / 2);
@@ -139,7 +122,7 @@
                                 <?php endif;
                                 endfor; ?>
                             </div>
-                            <div class="total-resenas">Valoración de <?= number_format($movie['valoracion'], 1) ?>/10</div>
+                            <div class="total-resenas">Valoración de <?= (number_format($movie['valoracion'], 1) / 2) ?>/10</div>
                         </div>
                     </div>
 

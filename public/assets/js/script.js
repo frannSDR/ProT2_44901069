@@ -147,4 +147,14 @@ document.addEventListener('DOMContentLoaded', function() {
             this.classList.add('active');
         });
     });
+
+    // Creamos el reproductor dependiendo de la url de cada link
+    const player = document.getElementById('video-player');
+    document.querySelectorAll('.play-server-btn').forEach(btn => {
+        btn.addEventListener('click', function() {
+            const url = this.getAttribute('data-url');
+            player.innerHTML = `<iframe src="${url}" width="100%" height="700" frameborder="0" allowfullscreen allow="autoplay"></iframe>`;
+            player.scrollIntoView({behavior: "smooth"});
+        });
+    });
 });

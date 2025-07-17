@@ -6,18 +6,21 @@ use App\Controllers\BaseController;
 use App\Models\PeliculaGeneroModel;
 use App\Models\PeliculaModel;
 use App\Models\GeneroModel;
+use App\Models\PeliculaStreamModel;
 
 class Movies_controller extends BaseController
 {
     protected $movieModel;
     protected $generoModel;
     protected $peliculaGeneroModel;
+    protected $peliculaStreamModel;
 
     public function __construct()
     {
         $this->movieModel = new PeliculaModel();
         $this->generoModel = new GeneroModel();
         $this->peliculaGeneroModel = new PeliculaGeneroModel();
+        $this->peliculaStreamModel = new PeliculaStreamModel();
     }
 
     public function list_movies()
@@ -95,10 +98,16 @@ class Movies_controller extends BaseController
             ->where('pelicula_generos.movie_id', $id)
             ->findAll();
 
+        $streams = $this->peliculaStreamModel
+            ->where('movie_id', $id)
+            ->where('activo', 1)
+            ->findAll();
+
         $data = [
             'titulo' => $movie['titulo'],
             'movie' => $movie,
             'generos' => $generos,
+            'streams' => $streams
         ];
 
         return view('Views/front/navbar', $data)
