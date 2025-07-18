@@ -81,17 +81,18 @@
                         <?php endforeach; ?>
                     </div>
 
-                    <!-- Opciones para Subtitulado -->
                     <?php foreach ($streamsPorIdioma as $idioma => $lista): ?>
                         <div class="server-options <?= $idioma === 'lat' ? ' active' : '' ?>" data-language="<?= esc($idioma) ?>">
                             <?php foreach ($lista as $stream): ?>
-                                <div class="server-option">
-                                    <div class="server-name"><i class="fas fa-server"></i> <?= esc($stream['server']) ?></div>
-                                    <div class="server-quality">Calidad: <?= esc($stream['calidad']) ?></div>
-                                    <button class="play-server-btn" data-url="<?= esc($stream['stream_url']) ?>">
-                                        <i class="fas fa-play"></i> Reproducir
-                                    </button>
-                                </div>
+                                <?php if ($stream['activo'] == 1): ?>
+                                    <div class="server-option">
+                                        <div class="server-name"><i class="fas fa-server"></i> <?= esc($stream['server']) ?></div>
+                                        <div class="server-quality">Calidad: <?= esc($stream['calidad']) ?></div>
+                                        <button class="play-server-btn" data-url="<?= esc($stream['stream_url']) ?>">
+                                            <i class="fas fa-play"></i> Reproducir
+                                        </button>
+                                    </div>
+                                <?php endif; ?>
                             <?php endforeach; ?>
                         </div>
                     <?php endforeach; ?>

@@ -29,7 +29,7 @@ class Movies_controller extends BaseController
         //** traemos la info de las peliculas */
 
         $moviesPage = $this->request->getVar('movies_page') ?? 1;
-        $moviesPerPage = 18;
+        $moviesPerPage = 15;
         $movieFilter = $this->request->getVar('movie_filter') ?? 'title';
         $movieDirection = $this->request->getVar('movie_direction') ?? 'asc';
         $movieDirection = strtoupper($movieDirection) === 'DESC' ? 'DESC' : 'ASC';

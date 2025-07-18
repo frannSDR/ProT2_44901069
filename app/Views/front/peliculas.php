@@ -78,11 +78,25 @@
         </div>
 
         <!-- paginacion -->
+        <!-- paginacion -->
         <div class="pagination">
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#"><i class="fas fa-chevron-right"></i></a>
+            <?php if ($currentMoviesPage > 1): ?>
+                <a href="<?= base_url('peliculas?movies_page=' . ($currentMoviesPage - 1)) ?>">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+            <?php endif; ?>
+
+            <?php for ($i = 1; $i <= $totalMoviesPage; $i++): ?>
+                <a href="<?= base_url('peliculas?movies_page=' . $i) ?>" class="<?= $i == $currentMoviesPage ? 'active' : '' ?>">
+                    <?= $i ?>
+                </a>
+            <?php endfor; ?>
+
+            <?php if ($currentMoviesPage < $totalMoviesPage): ?>
+                <a href="<?= base_url('peliculas?movies_page=' . ($currentMoviesPage + 1)) ?>">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            <?php endif; ?>
         </div>
     </section>
 </main>
