@@ -157,4 +157,51 @@ document.addEventListener('DOMContentLoaded', function() {
             player.scrollIntoView({behavior: "smooth"});
         });
     });
+    
+    // Manejo de selección de temporada
+    const seasonSelect = document.getElementById('season-select');
+    if (seasonSelect) {
+        seasonSelect.addEventListener('change', function() {
+            const selectedSeason = this.value;
+            
+            // Ocultar todos los episodios
+            document.querySelectorAll('.season-episodes').forEach(episodes => {
+                episodes.style.display = 'none';
+            });
+            
+            // Mostrar episodios de la temporada seleccionada
+            document.querySelector(`.season-episodes[data-season="${selectedSeason}"]`).style.display = 'block';
+        });
+    }
+    
+    // Manejo de reproducción de capítulos
+    // document.querySelectorAll('.play-server-btn').forEach(btn => {
+    //     btn.addEventListener('click', function(e) {
+    //         e.preventDefault();
+    //         const videoUrl = this.getAttribute('data-url');
+            
+    //         // Aquí iría el código para iniciar la reproducción
+    //         const videoPlayer = document.getElementById('video-player');
+    //         videoPlayer.innerHTML = `
+    //             <div class="player-loading">
+    //                 <div class="loading-spinner">
+    //                     <i class="fas fa-spinner fa-spin"></i>
+    //                 </div>
+    //                 <p>Cargando capítulo...</p>
+    //             </div>
+    //         `;
+    //         videoPlayer.style.display = 'block';
+            
+    //         // Simular carga (en producción aquí cargarías el reproductor real)
+    //         setTimeout(() => {
+    //             videoPlayer.innerHTML = `
+    //                 <iframe src="${videoUrl}" frameborder="0" allowfullscreen></iframe>
+    //             `;
+    //         }, 1500);
+    //     });
+    // });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    
 });

@@ -58,31 +58,46 @@
         </div>
 
         <div class="grid-content">
-            <div class="movie-card">
-                <div class="movie-cover">
-                    <img src="https://image.tmdb.org/t/p/original/lA9CNSdo50iQPZ8A2fyVpMvJZAf.jpg" alt="Interstellar">
-                    <div class="movie-rating"><i class="fas fa-star"></i> 8.6</div>
-                </div>
-                <h3 class="movie-title">Twin Peaks</h3>
-                <p class="movie-genre">Thriller · 1991</p>
-            </div>
-
-            <div class="movie-card">
-                <div class="movie-cover">
-                    <img src="https://image.tmdb.org/t/p/original/uNctKf62RRL8RKPTrdyFrcttwT2.jpg" alt="The Dark Knight">
-                    <div class="movie-rating"><i class="fas fa-star"></i> 9.0</div>
-                </div>
-                <h3 class="movie-title">Fallout</h3>
-                <p class="movie-genre">Acción · 2024</p>
-            </div>
+            <?php foreach ($series as $serie): ?>
+                <?php if ($serie['activa'] == 1): ?>
+                    <div class="movie-card">
+                        <div class="movie-cover">
+                            <img src="<?= $serie['poster'] ?>" alt="<?= $serie['titulo'] ?>">
+                            <div class="movie-rating"><i class="fas fa-star"></i> <?= $serie['valoracion'] ?></div>
+                        </div>
+                        <h3 class="menu-movie-title"><a href="<?= base_url('serie/' . $serie['serie_id']) ?>"><?= esc($serie['titulo']) ?></a></h3>
+                        <p class="movie-genre">
+                            <?php foreach ($serie['generos'] as $index => $genero): ?>
+                                <?= esc($genero['nombre']) ?>
+                                <?= $index < count($serie['generos']) - 1 ? '·' : '' ?>
+                            <?php endforeach; ?>
+                            · <?= $serie['año_inicio'] ?>
+                            · <?= esc($serie['estado']) ?>
+                        </p>
+                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
         </div>
 
         <!-- paginacion -->
         <div class="pagination">
-            <a href="#" class="active">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#"><i class="fas fa-chevron-right"></i></a>
+            <?php if ($currentSeriesPage > 1): ?>
+                <a href="<?= base_url('series?series_page=' . ($currentSeriesPage - 1)) ?>">
+                    <i class="fas fa-chevron-left"></i>
+                </a>
+            <?php endif; ?>
+
+            <?php for ($i = 1; $i <= $totalSeriesPage; $i++): ?>
+                <a href="<?= base_url('series?series_page=' . $i) ?>" class="<?= $i == $currentSeriesPage ? 'active' : '' ?>">
+                    <?= $i ?>
+                </a>
+            <?php endfor; ?>
+
+            <?php if ($currentSeriesPage < $totalSeriesPage): ?>
+                <a href="<?= base_url('series?series_page=' . ($currentSeriesPage + 1)) ?>">
+                    <i class="fas fa-chevron-right"></i>
+                </a>
+            <?php endif; ?>
         </div>
     </section>
 </main>

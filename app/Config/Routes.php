@@ -14,6 +14,8 @@ $routes->get('/pelicula/(:num)', 'Admin_controllers\Movies_controller::movie_det
 
 $routes->get('series', 'Admin_controllers\Series_controller::list_series');
 
+$routes->get('/serie/(:num)', 'Admin_controllers\Series_controller::serie_detail/$1');
+
 $routes->get('login', 'User_controllers\User_controller::login');
 
 $routes->post('/login-form', 'User_controllers\User_controller::loginValidation');

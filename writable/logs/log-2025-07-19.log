@@ -8,3 +8,113 @@ DEBUG - 2025-07-19 02:57:44 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-07-19 02:57:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-07-19 02:58:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-07-19 02:58:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 04:29:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 18:20:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 18:20:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 18:20:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 18:20:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 18:20:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 18:22:21 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 18:22:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 18:22:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 18:22:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 18:31:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-19 18:31:35 --> ErrorException: Undefined array key "año"
+[Method: GET, Route: series]
+in APPPATH\Views\front\series.php on line 74.
+ 1 APPPATH\Views\front\series.php(74): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "año"', 'C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\series.php', 74)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\series.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Views/front/series', [], true)
+ 5 APPPATH\Controllers\Admin_controllers\Series_controller.php(87): view('Views/front/series', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Series_controller->list_series()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Series_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-19 18:31:44 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 18:32:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 19:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 19:27:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 20:58:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 21:29:28 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 21:29:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-19 21:29:32 --> ErrorException: Undefined variable $streams
+[Method: GET, Route: serie/1]
+in APPPATH\Views\front\seccion_serie.php on line 71.
+ 1 APPPATH\Views\front\seccion_serie.php(71): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $streams', 'C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\seccion_serie.php', 71)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\seccion_serie.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Views/front/seccion_serie', [], true)
+ 5 APPPATH\Controllers\Admin_controllers\Series_controller.php(129): view('Views/front/seccion_serie', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Series_controller->serie_detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Series_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-19 21:50:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-19 21:50:22 --> ErrorException: Undefined variable $movie
+[Method: GET, Route: serie/1]
+in APPPATH\Views\front\seccion_serie.php on line 142.
+ 1 APPPATH\Views\front\seccion_serie.php(142): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $movie', 'C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\seccion_serie.php', 142)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\seccion_serie.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Views/front/seccion_serie', [], true)
+ 5 APPPATH\Controllers\Admin_controllers\Series_controller.php(137): view('Views/front/seccion_serie', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Series_controller->serie_detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Series_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-19 21:50:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-19 21:50:24 --> ErrorException: Undefined variable $movie
+[Method: GET, Route: serie/1]
+in APPPATH\Views\front\seccion_serie.php on line 142.
+ 1 APPPATH\Views\front\seccion_serie.php(142): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $movie', 'C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\seccion_serie.php', 142)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\seccion_serie.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Views/front/seccion_serie', [], true)
+ 5 APPPATH\Controllers\Admin_controllers\Series_controller.php(137): view('Views/front/seccion_serie', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Series_controller->serie_detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Series_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-19 21:51:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-19 21:51:11 --> ErrorException: Undefined variable $movie
+[Method: GET, Route: serie/1]
+in APPPATH\Views\front\seccion_serie.php on line 268.
+ 1 APPPATH\Views\front\seccion_serie.php(268): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $movie', 'C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\seccion_serie.php', 268)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\seccion_serie.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Views/front/seccion_serie', [], true)
+ 5 APPPATH\Controllers\Admin_controllers\Series_controller.php(137): view('Views/front/seccion_serie', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Series_controller->serie_detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Series_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-19 21:51:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 21:55:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 21:57:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-19 21:57:14 --> ErrorException: Undefined array key "numero"
+[Method: GET, Route: serie/1]
+in APPPATH\Views\front\seccion_serie.php on line 93.
+ 1 APPPATH\Views\front\seccion_serie.php(93): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "numero"', 'C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\seccion_serie.php', 93)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\seccion_serie.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Views/front/seccion_serie', [], true)
+ 5 APPPATH\Controllers\Admin_controllers\Series_controller.php(137): view('Views/front/seccion_serie', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Series_controller->serie_detail('1')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Series_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-19 21:57:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-19 21:59:29 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

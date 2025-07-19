@@ -1944,10 +1944,6 @@ header {
     border: none;
 }
 
-/* ------------------------- */
-/* REPRODUCTOR MEJORADO */
-/* ------------------------- */
-
 .player-section {
     background-color: var(--card-bg-color);
     border-radius: 12px;
@@ -2099,8 +2095,6 @@ header {
     color: #aaa;
     font-weight: 500;
 }
-
-/* Resto de estilos para reseñas... (manteniendo los que ya tienes pero con pequeños ajustes) */
 
 /* Animaciones */
 @keyframes fadeIn {
@@ -2575,5 +2569,99 @@ header {
     .formulario-resena {
         padding: 20px 15px;
     }
+}
+
+/* Estilos para el reproductor de series */
+.season-selector {
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.season-selector label {
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+.season-select {
+    background-color: var(--card-bg-color);
+    color: var(--color-text);
+    border: 1px solid var(--border-color);
+    padding: 8px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.season-select:hover {
+    border-color: var(--amarillo);
+}
+
+.episodes-container {
+    margin-top: 20px;
+}
+
+.episode-card {
+    background-color: var(--card-bg-color);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.episode-card:hover {
+    border-color: rgba(255, 195, 0, 0.3);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.episode-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.episode-title {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--color-text);
+}
+
+.episode-duration {
+    background-color: rgba(255, 195, 0, 0.1);
+    color: var(--amarillo);
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.episode-servers {
+    margin-top: 15px;
+}
+
+/* Asegurar que los servidores se muestren en grid */
+.episode-card .server-options {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+/* Estilos para el reproductor */
+.video-player-container {
+    width: 100%;
+    background-color: #000;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 30px;
+    aspect-ratio: 16/9;
+    display: none;
+}
+
+.video-player-container.active {
+    display: block;
 }
 

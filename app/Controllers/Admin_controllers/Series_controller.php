@@ -6,21 +6,27 @@ use App\Controllers\BaseController;
 use App\Models\SerieGeneroModel;
 use App\Models\SerieModel;
 use App\Models\GeneroModel;
-//use App\Models\SerieStreamModel;
+use App\Models\TemporadaModel;
+use App\Models\EpisodioModel;
+use App\Models\SerieStreamModel;
 
 class Series_controller extends BaseController
 {
     protected $serieModel;
     protected $generoModel;
     protected $serieGeneroModel;
-    //protected $serieStreamModel;
+    protected $temporadaModel;
+    protected $episodioModel;
+    protected $serieStreamModel;
 
     public function __construct()
     {
         $this->serieModel = new SerieModel();
         $this->generoModel = new GeneroModel();
         $this->serieGeneroModel = new SerieGeneroModel();
-        //$this->serieStreamModel = new SerieStreamModel();
+        $this->temporadaModel = new TemporadaModel();
+        $this->episodioModel = new EpisodioModel();
+        $this->serieStreamModel = new SerieStreamModel();
     }
 
     public function list_series()
@@ -88,30 +94,47 @@ class Series_controller extends BaseController
             . view('Views/front/footer');
     }
 
-    // public function movie_detail($id = null)
-    // {
-    //     $serie = $this->serieModel->find($id);
+    public function serie_detail($id = null)
+    {
+        $serie = $this->serieModel->find($id);
 
-    //     $generos = $this->serieGeneroModel
-    //         ->select('generos.nombre, generos.slug')
-    //         ->join('generos', 'generos.genero_id = pelicula_generos.genero_id')
-    //         ->where('pelicula_generos.movie_id', $id)
-    //         ->findAll();
+        $generos = $this->serieGeneroModel
+            ->select('generos.nombre, generos.slug')
+            ->join('generos', 'generos.genero_id = serie_generos.genero_id')
+            ->where('serie_generos.serie_id', $id)
+            ->findAll();
 
-    //     $streams = $this->serieStreamModel
-    //         ->where('movie_id', $id)
-    //         ->where('activo', 1)
-    //         ->findAll();
+        // Obtener temporadas con episodios
+        $temporadas = $this->temporadaModel
+            ->where('serie_id', $id)
+            ->orderBy('numero_temporada', 'ASC')
+            ->findAll();
 
-    //     $data = [
-    //         'titulo' => $serie['titulo'],
-    //         'movie' => $serie,
-    //         'generos' => $generos,
-    //         'streams' => $streams
-    //     ];
+        foreach ($temporadas as &$temporada) {
+            $temporada['episodios'] = $this->episodioModel
+                ->where('temporada_id', $temporada['temporada_id'])
+                ->orderBy('numero_episodio', 'ASC')
+                ->findAll();
 
-    //     return view('Views/front/navbar', $data)
-    //         . view('Views/front/seccion_pelicula', $data)
-    //         . view('Views/front/footer');
-    // }
+            // Para cada episodio, obtener sus streams
+            foreach ($temporada['episodios'] as &$episodio) {
+                $episodio['streams'] = $this->serieStreamModel
+                    ->where('episodio_id', $episodio['episodio_id'])
+                    ->where('activo', 1)
+                    ->findAll();
+            }
+        }
+
+        $data = [
+            'titulo' => $serie['titulo'],
+            'serie' => $serie,
+            'generos' => $generos,
+            'temporadas' => $temporadas,
+            'streams' => []
+        ];
+
+        return view('Views/front/navbar', $data)
+            . view('Views/front/seccion_serie', $data)
+            . view('Views/front/footer');
+    }
 }

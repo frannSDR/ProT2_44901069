@@ -78,7 +78,6 @@
         </div>
 
         <!-- paginacion -->
-        <!-- paginacion -->
         <div class="pagination">
             <?php if ($currentMoviesPage > 1): ?>
                 <a href="<?= base_url('peliculas?movies_page=' . ($currentMoviesPage - 1)) ?>">
