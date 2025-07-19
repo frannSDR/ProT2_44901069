@@ -11,7 +11,7 @@
                 <i class="fas fa-film"></i>
             </div>
             <div class="stat-info">
-                <h3>1,250</h3>
+                <h3><?= $total_movies ?></h3>
                 <p>Películas</p>
             </div>
         </div>

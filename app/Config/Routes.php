@@ -12,7 +12,7 @@ $routes->get('peliculas', 'Admin_controllers\Movies_controller::list_movies');
 
 $routes->get('/pelicula/(:num)', 'Admin_controllers\Movies_controller::movie_detail/$1');
 
-$routes->get('series', 'Home::series');
+$routes->get('series', 'Admin_controllers\Series_controller::list_series');
 
 $routes->get('login', 'User_controllers\User_controller::login');
 
