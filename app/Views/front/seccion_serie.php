@@ -82,61 +82,85 @@
                 <!-- Reproductor de serie -->
                 <h2 class="titulo-sinopsis" style="margin-top: 30px;">Reproducir Serie</h2>
                 <div class="player-section">
-                    <!-- Selector de idioma (solo mostrar si hay streams) -->
-                    <?php if (!empty($streamsPorIdioma)): ?>
-                        <div class="player-language-options">
-                            <?php foreach ($streamsPorIdioma as $idioma => $lista): ?>
-                                <div class="language-tab <?= $idioma === 'lat' ? 'active' : '' ?>" data-language="<?= esc($idioma) ?>">
-                                    <?= $idioma === 'sub' ? 'Subtitulado' : 'Español Latino' ?>
-                                </div>
-                            <?php endforeach; ?>
+                    <!-- Controles principales en una sola línea -->
+                    <div class="player-controls">
+                        <div class="season-selector-compact">
+                            <label>Temporada:</label>
+                            <select id="season-select" class="season-select-modern">
+                                <?php foreach ($temporadas as $temporada): ?>
+                                    <option value="<?= $temporada['numero_temporada'] ?>">T<?= $temporada['numero_temporada'] ?></option>
+                                <?php endforeach; ?>
+                            </select>
                         </div>
-                    <?php endif; ?>
 
-                    <!-- Selector de temporada -->
-                    <div class="season-selector">
-                        <label for="season-select">Temporada:</label>
-                        <select id="season-select" class="season-select">
-                            <?php foreach ($temporadas as $temporada): ?>
-                                <option value="<?= $temporada['numero_temporada'] ?>">Temporada <?= $temporada['numero_temporada'] ?></option>
-                            <?php endforeach; ?>
-                        </select>
+                        <?php
+                        // verificar si hay streams disponibles
+                        $hayStreams = false;
+                        $idiomasDisponibles = [];
+                        foreach ($temporadas as $temporada) {
+                            foreach ($temporada['episodios'] as $episodio) {
+                                if (!empty($episodio['streams'])) {
+                                    $hayStreams = true;
+                                    foreach ($episodio['streams'] as $stream) {
+                                        $idiomasDisponibles[$stream['idioma']] = true;
+                                    }
+                                }
+                            }
+                        }
+                        ?>
+
+                        <?php if ($hayStreams && count($idiomasDisponibles) > 1): ?>
+                            <div class="language-selector-compact">
+                                <label>Idioma:</label>
+                                <div class="language-tabs-mini">
+                                    <?php foreach ($idiomasDisponibles as $idioma => $value): ?>
+                                        <button class="lang-tab <?= $idioma === 'lat' ? 'active' : '' ?>" data-language="<?= $idioma ?>">
+                                            <?= $idioma === 'sub' ? 'Subtitulado' : 'Espanol Latino' ?>
+                                        </button>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        <?php endif; ?>
                     </div>
 
-                    <!-- Contenedor de capítulos -->
-                    <div class="episodes-container">
+                    <!-- lista de episodios -->
+                    <div class="episodes-list-modern">
                         <?php foreach ($temporadas as $temporada): ?>
-                            <div class="season-episodes" data-season="<?= $temporada['numero_temporada'] ?>">
+                            <div class="season-episodes-modern" data-season="<?= $temporada['numero_temporada'] ?>">
                                 <?php foreach ($temporada['episodios'] as $episodio): ?>
-                                    <div class="episode-card">
-                                        <div class="episode-header">
-                                            <h3 class="episode-title">Capítulo <?= $episodio['numero_episodio'] ?>: <?= esc($episodio['titulo']) ?></h3>
-                                            <span class="episode-duration"><?= $episodio['duracion'] ?> min</span>
+                                    <div class="episode-item-modern" data-episode="<?= $episodio['numero_episodio'] ?>">
+                                        <div class="episode-number"><?= $episodio['numero_episodio'] ?></div>
+                                        <div class="episode-info">
+                                            <h4 class="episode-title-modern"><?= esc($episodio['titulo']) ?></h4>
+                                            <p class="episode-duration"><?= $episodio['duracion'] ?> min</p>
+                                            <?php if (!empty($episodio['sinopsis'])): ?>
+                                                <p class="episode-synopsis"><?= esc($episodio['sinopsis']) ?></p>
+                                            <?php endif; ?>
                                         </div>
-
-                                        <!-- Servidores en línea horizontal -->
-                                        <div class="episode-servers">
+                                        <div class="episode-actions">
                                             <?php if (!empty($episodio['streams'])): ?>
-                                                <div class="servers-grid">
-                                                    <?php foreach ($episodio['streams'] as $stream): ?>
-                                                        <div class="server-option">
-                                                            <div class="server-info">
-                                                                <div class="server-name">
-                                                                    <i class="fas fa-server"></i> <?= esc($stream['server']) ?>
-                                                                </div>
-                                                                <div class="server-quality"><?= esc($stream['calidad']) ?></div>
-                                                                <div class="server-language">
-                                                                    <?= $stream['idioma'] === 'sub' ? 'SUB' : 'LAT' ?>
-                                                                </div>
+                                                <!-- boton de main para reproducir -->
+                                                <button class="play-episode-btn" data-episode="<?= $episodio['numero_episodio'] ?>">
+                                                    <i class="fas fa-play"></i>
+                                                </button>
+                                                <!-- dropdown con los servidores -->
+                                                <div class="servers-dropdown">
+                                                    <button class="servers-toggle">
+                                                        <i class="fas fa-server"></i>
+                                                        <i class="fas fa-chevron-down"></i>
+                                                    </button>
+                                                    <div class="servers-menu">
+                                                        <?php foreach ($episodio['streams'] as $stream): ?>
+                                                            <div class="server-item" data-url="<?= esc($stream['stream_url']) ?>" data-language="<?= $stream['idioma'] ?>">
+                                                                <span class="server-name"><?= esc($stream['server']) ?></span>
+                                                                <span class="server-quality"><?= esc($stream['calidad']) ?></span>
+                                                                <span class="server-lang"><?= $stream['idioma'] === 'sub' ? 'SUB' : 'LAT' ?></span>
                                                             </div>
-                                                            <button class="play-server-btn" data-url="<?= esc($stream['stream_url']) ?>">
-                                                                <i class="fas fa-play"></i> Ver
-                                                            </button>
-                                                        </div>
-                                                    <?php endforeach; ?>
+                                                        <?php endforeach; ?>
+                                                    </div>
                                                 </div>
                                             <?php else: ?>
-                                                <p class="no-streams">No hay streams disponibles para este episodio</p>
+                                                <span class="no-streams-indicator">Sin links.</span>
                                             <?php endif; ?>
                                         </div>
                                     </div>
@@ -145,8 +169,8 @@
                         <?php endforeach; ?>
                     </div>
 
-                    <!-- Contenedor para el reproductor -->
-                    <div id="video-player" class="video-player-container" style="margin-top:20px;"></div>
+                    <!-- contenedor para el reproductor -->
+                    <div id="video-player" class="video-player-container"></div>
                 </div>
 
                 <!-- reseñas de usuarios -->
