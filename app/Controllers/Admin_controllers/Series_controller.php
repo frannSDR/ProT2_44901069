@@ -113,15 +113,14 @@ class Series_controller extends BaseController
         foreach ($temporadas as &$temporada) {
             $temporada['episodios'] = $this->episodioModel
                 ->where('temporada_id', $temporada['temporada_id'])
-                ->orderBy('numero_episodio', 'ASC')
+                ->orderBy('nro_episodio', 'ASC')
                 ->findAll();
 
-            // Para cada episodio, obtener streams usando la nueva estructura
             foreach ($temporada['episodios'] as &$episodio) {
                 $episodio['streams'] = $this->serieStreamModel
-                    ->where('serie_id', $id)  // ID de la serie actual
-                    ->where('nro_temporada', $temporada['numero_temporada'])  // Número de temporada
-                    ->where('nro_episodio', $episodio['numero_episodio'])     // Número de episodio
+                    ->where('serie_id', $id)
+                    ->where('nro_temporada', $temporada['numero_temporada'])
+                    ->where('nro_episodio', $episodio['nro_episodio'])
                     ->where('activo', 1)
                     ->findAll();
             }

@@ -128,8 +128,8 @@
                         <?php foreach ($temporadas as $temporada): ?>
                             <div class="season-episodes-modern" data-season="<?= $temporada['numero_temporada'] ?>">
                                 <?php foreach ($temporada['episodios'] as $episodio): ?>
-                                    <div class="episode-item-modern" data-episode="<?= $episodio['numero_episodio'] ?>">
-                                        <div class="episode-number"><?= $episodio['numero_episodio'] ?></div>
+                                    <div class="episode-item-modern" data-episode="<?= $episodio['nro_episodio'] ?>">
+                                        <div class="episode-number"><?= $episodio['nro_episodio'] ?></div>
                                         <div class="episode-info">
                                             <h4 class="episode-title-modern"><?= esc($episodio['titulo']) ?></h4>
                                             <p class="episode-duration"><?= $episodio['duracion'] ?> min</p>
@@ -140,7 +140,7 @@
                                         <div class="episode-actions">
                                             <?php if (!empty($episodio['streams'])): ?>
                                                 <!-- boton de main para reproducir -->
-                                                <button class="play-episode-btn" data-episode="<?= $episodio['numero_episodio'] ?>">
+                                                <button class="play-episode-btn" data-episode="<?= $episodio['nro_episodio'] ?>">
                                                     <i class="fas fa-play"></i>
                                                 </button>
                                                 <!-- dropdown con los servidores -->

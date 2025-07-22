@@ -61,19 +61,22 @@
             <?php foreach ($series as $serie): ?>
                 <?php if ($serie['activa'] == 1): ?>
                     <div class="movie-card">
-                        <div class="movie-cover">
-                            <img src="<?= $serie['poster'] ?>" alt="<?= $serie['titulo'] ?>">
-                            <div class="movie-rating"><i class="fas fa-star"></i> <?= $serie['valoracion'] ?></div>
-                        </div>
-                        <h3 class="menu-movie-title"><a href="<?= base_url('serie/' . $serie['serie_id']) ?>"><?= esc($serie['titulo']) ?></a></h3>
-                        <p class="movie-genre">
-                            <?php foreach ($serie['generos'] as $index => $genero): ?>
-                                <?= esc($genero['nombre']) ?>
-                                <?= $index < count($serie['generos']) - 1 ? '·' : '' ?>
-                            <?php endforeach; ?>
-                            · <?= $serie['año_inicio'] ?>
-                            · <?= esc($serie['estado']) ?>
-                        </p>
+                        <a href="<?= base_url('serie/' . $serie['serie_id']) ?>">
+                            <div class="movie-cover">
+                                <img src="<?= $serie['poster'] ?>" alt="<?= $serie['titulo'] ?>">
+                                <div class="movie-rating"><i class="fas fa-star"></i> <?= $serie['valoracion'] ?></div>
+                            </div>
+                            <h3 class="menu-movie-title"><a href="<?= base_url('serie/' . $serie['serie_id']) ?>"><?= esc($serie['titulo']) ?></a></h3>
+                            <p class="movie-genre">
+                                <?php foreach ($serie['generos'] as $index => $genero): ?>
+                                    <?= esc($genero['nombre']) ?>
+                                    <?= $index < count($serie['generos']) - 1 ? '·' : '' ?>
+                                <?php endforeach; ?>
+                            </p>
+                            <p class="movie-genre">
+                                <?= $serie['año_inicio'] ?> · <?= esc($serie['estado']) ?>
+                            </p>
+                        </a>
                     </div>
                 <?php endif; ?>
             <?php endforeach; ?>

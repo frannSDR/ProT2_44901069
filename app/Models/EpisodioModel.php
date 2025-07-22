@@ -10,17 +10,13 @@ class EpisodioModel extends Model
     protected $primaryKey = 'episodio_id';
 
     protected $allowedFields = [
-        'temporada_id',
-        'numero_episodio',
+        'nro_temporada',
+        'nro_episodio',
         'titulo',
         'sinopsis',
         'duracion',
         'fecha_emision',
-        'magnet_link',
-        'torrent_hash',
-        'archivo_torrent',
         'calidad',
-        'tamaño_mb'
     ];
 
     protected $useTimestamps = true;
