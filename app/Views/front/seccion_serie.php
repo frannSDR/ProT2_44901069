@@ -151,11 +151,17 @@
                                                     </button>
                                                     <div class="servers-menu">
                                                         <?php foreach ($episodio['streams'] as $stream): ?>
-                                                            <div class="server-item" data-url="<?= esc($stream['stream_url']) ?>" data-language="<?= $stream['idioma'] ?>">
-                                                                <span class="server-name"><?= esc($stream['server']) ?></span>
-                                                                <span class="server-quality"><?= esc($stream['calidad']) ?></span>
-                                                                <span class="server-lang"><?= $stream['idioma'] === 'sub' ? 'SUB' : 'LAT' ?></span>
-                                                            </div>
+                                                            <?php if ($stream != null): ?>
+                                                                <div class="server-item" data-url="<?= esc($stream['stream_url']) ?>" data-language="<?= $stream['idioma'] ?>">
+                                                                    <span class="server-name"><?= esc($stream['server']) ?></span>
+                                                                    <span class="server-quality"><?= esc($stream['calidad']) ?></span>
+                                                                    <span class="server-lang"><?= $stream['idioma'] === 'sub' ? 'SUB' : 'LAT' ?></span>
+                                                                </div>
+                                                            <?php else: ?>
+                                                                <div class="server-item no-stream">
+                                                                    <span class="no-stream-text">Sin link disponible</span>
+                                                                </div>
+                                                            <?php endif; ?>
                                                         <?php endforeach; ?>
                                                     </div>
                                                 </div>
