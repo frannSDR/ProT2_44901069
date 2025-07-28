@@ -1,5 +1,6 @@
 <?php
 
+use App\Controllers\Admin_controllers\Admin_controller;
 use CodeIgniter\Router\RouteCollection;
 
 /**
@@ -49,3 +50,9 @@ $routes->post('admin/usuarios/cambiar-estado/(:num)', 'Admin_controllers\Admin_c
 $routes->get('admin/usuarios/crear', 'Admin_controllers\Admin_controller::crearUsuario');
 
 $routes->post('admin/usuarios/guardar', 'Admin_controllers\Admin_controller::guardarUsuario');
+
+$routes->get('peliculas/genero/(:segment)', 'Admin_controllers\Movies_controller::filtro_genero_pelicula/$1');
+
+$routes->get('series/genero/(:segment)', 'Admin_controller\Series_controller::filtro_genero_serie/$1');
+
+// $routes->get('(:segment)', 'Admin_controllers\Series_controller::genero/$1');

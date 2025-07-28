@@ -1727,12 +1727,11 @@ header {
     padding: 0 20px;
 }
 
-/* Banner mejorado */
 .movie-banner {
     position: relative;
     height: 500px;
     background-size: cover;
-    background-position: center;
+    background-position: 0px -100px;
     display: flex;
     align-items: flex-end;
     overflow: hidden;
@@ -2877,10 +2876,6 @@ header {
     outline: none;
     border-color: var(--amarillo);
     box-shadow: 0 0 0 2px rgba(255, 195, 0, 0.2);
-}
-
-.season-select-modern option {
-    background: rgba(255, 255, 255, 0.1);
 }
 
 .language-tabs-mini {

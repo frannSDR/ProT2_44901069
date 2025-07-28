@@ -3,6 +3,7 @@
 namespace App\Controllers\Admin_controllers;
 
 use App\Models\PeliculaModel;
+use App\Models\SerieModel;
 use CodeIgniter\Controller;
 use App\Models\UsuarioModel;
 
@@ -10,11 +11,13 @@ class Admin_controller extends Controller
 {
     protected $usuarioModel;
     protected $moviesModel;
+    protected $seriesModel;
 
     public function __construct()
     {
         $this->usuarioModel = new UsuarioModel();
         $this->moviesModel = new PeliculaModel();
+        $this->seriesModel = new SerieModel();
         helper(['form', 'url', 'admin']);
     }
 
@@ -39,6 +42,7 @@ class Admin_controller extends Controller
         $data['usuarios_inactivos'] = $this->usuarioModel->where('is_active', 0)->countAllResults();
         $data['total_admins'] = $this->usuarioModel->where('is_admin', 1)->countAllResults();
         $data['total_movies'] = $this->moviesModel->countAll();
+        $data['total_series'] = $this->seriesModel->countAll();
 
         echo view('front/navbar', $data);
         echo view('Back/admin/admin', $data);

@@ -20,7 +20,7 @@
                 <i class="fas fa-tv"></i>
             </div>
             <div class="stat-info">
-                <h3>350</h3>
+                <h3><?= $total_series ?></h3>
                 <p>Series</p>
             </div>
         </div>

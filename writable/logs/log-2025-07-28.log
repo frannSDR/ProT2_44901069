@@ -1,0 +1,244 @@
+DEBUG - 2025-07-28 14:28:25 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 14:29:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 14:59:26 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 14:59:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 14:59:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 14:59:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 14:59:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 14:59:59 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 15:00:03 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 15:00:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 15:00:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 15:00:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 15:26:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 15:26:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 15:26:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 16:11:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 21:00:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 22:34:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 22:34:10 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 22:34:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 22:34:14 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 22:34:15 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 22:34:38 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 22:35:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 22:35:05 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 22:35:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 22:35:08 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 22:35:09 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 22:35:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 22:35:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 22:35:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 22:35:24 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:25:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:25:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:25:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:25:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:25:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:26:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:26:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:29:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:29:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:29:34 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:29:36 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:29:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:30:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:30:55 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:30:56 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:32:11 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:32:48 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-07-28 23:32:49 --> mysqli_sql_exception: Unknown column 'movies.movie_id' in 'on clause' in C:\xampp\htdocs\FilmStream\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\FilmStream\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*)...', 0)
+#1 C:\xampp\htdocs\FilmStream\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*)...')
+#2 C:\xampp\htdocs\FilmStream\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*)...')
+#3 C:\xampp\htdocs\FilmStream\system\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#4 C:\xampp\htdocs\FilmStream\system\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+#5 C:\xampp\htdocs\FilmStream\system\BaseModel.php(1287): CodeIgniter\Model->countAllResults(false)
+#6 C:\xampp\htdocs\FilmStream\app\Controllers\Admin_controllers\Movies_controller.php(120): CodeIgniter\BaseModel->paginate(15, 'movies', 1)
+#7 C:\xampp\htdocs\FilmStream\system\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->filtro_genero_pelicula('accion')
+#8 C:\xampp\htdocs\FilmStream\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+#9 C:\xampp\htdocs\FilmStream\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\FilmStream\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\FilmStream\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\FilmStream\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-07-28 23:32:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'movies.movie_id' in 'on clause'
+[Method: GET, Route: peliculas/genero/accion]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `peliculas`
+JOIN `pelicula_generos` ON `movies`.`movie_id` = `pelicula_generos`.`movie_id`
+JOIN `generos` ON `generos`.`genero_id` = `pelicula_generos`.`genero_id`
+WHERE `generos`.`slug` = :generos.slug:', [...], false)
+ 2 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 3 SYSTEMPATH\BaseModel.php(1287): CodeIgniter\Model->countAllResults(false)
+ 4 APPPATH\Controllers\Admin_controllers\Movies_controller.php(120): CodeIgniter\BaseModel->paginate(15, 'movies', 1)
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->filtro_genero_pelicula('accion')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-28 23:32:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'movies.movie_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `peliculas`
+JOIN `pelicula_generos` ON `movies`.`movie_id` = `pelicula_generos`.`movie_id`
+JOIN `generos` ON `generos`.`genero_id` = `pelicula_generos`.`genero_id`
+WHERE `generos`.`slug` = \'accion\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `peliculas`
+JOIN `pelicula_generos` ON `movies`.`movie_id` = `pelicula_generos`.`movie_id`
+JOIN `generos` ON `generos`.`genero_id` = `pelicula_generos`.`genero_id`
+WHERE `generos`.`slug` = \'accion\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `peliculas`
+JOIN `pelicula_generos` ON `movies`.`movie_id` = `pelicula_generos`.`movie_id`
+JOIN `generos` ON `generos`.`genero_id` = `pelicula_generos`.`genero_id`
+WHERE `generos`.`slug` = :generos.slug:', [...], false)
+ 4 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 5 SYSTEMPATH\BaseModel.php(1287): CodeIgniter\Model->countAllResults(false)
+ 6 APPPATH\Controllers\Admin_controllers\Movies_controller.php(120): CodeIgniter\BaseModel->paginate(15, 'movies', 1)
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->filtro_genero_pelicula('accion')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-28 23:32:49 --> [Caused by] mysqli_sql_exception: Unknown column 'movies.movie_id' in 'on clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT COUNT(*) AS `numrows`
+FROM `peliculas`
+JOIN `pelicula_generos` ON `movies`.`movie_id` = `pelicula_generos`.`movie_id`
+JOIN `generos` ON `generos`.`genero_id` = `pelicula_generos`.`genero_id`
+WHERE `generos`.`slug` = \'accion\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT COUNT(*) AS `numrows`
+FROM `peliculas`
+JOIN `pelicula_generos` ON `movies`.`movie_id` = `pelicula_generos`.`movie_id`
+JOIN `generos` ON `generos`.`genero_id` = `pelicula_generos`.`genero_id`
+WHERE `generos`.`slug` = \'accion\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT COUNT(*) AS `numrows`
+FROM `peliculas`
+JOIN `pelicula_generos` ON `movies`.`movie_id` = `pelicula_generos`.`movie_id`
+JOIN `generos` ON `generos`.`genero_id` = `pelicula_generos`.`genero_id`
+WHERE `generos`.`slug` = \'accion\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1733): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*) AS `numrows`
+FROM `peliculas`
+JOIN `pelicula_generos` ON `movies`.`movie_id` = `pelicula_generos`.`movie_id`
+JOIN `generos` ON `generos`.`genero_id` = `pelicula_generos`.`genero_id`
+WHERE `generos`.`slug` = :generos.slug:', [...], false)
+ 5 SYSTEMPATH\Model.php(676): CodeIgniter\Database\BaseBuilder->countAllResults(false)
+ 6 SYSTEMPATH\BaseModel.php(1287): CodeIgniter\Model->countAllResults(false)
+ 7 APPPATH\Controllers\Admin_controllers\Movies_controller.php(120): CodeIgniter\BaseModel->paginate(15, 'movies', 1)
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->filtro_genero_pelicula('accion')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ERROR - 2025-07-28 23:34:02 --> mysqli_sql_exception: Unknown column 'pelicula_generos.serie_id' in 'where clause' in C:\xampp\htdocs\FilmStream\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\xampp\htdocs\FilmStream\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pelicul...', 0)
+#1 C:\xampp\htdocs\FilmStream\system\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pelicul...')
+#2 C:\xampp\htdocs\FilmStream\system\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pelicul...')
+#3 C:\xampp\htdocs\FilmStream\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pelicul...', Array, false)
+#4 C:\xampp\htdocs\FilmStream\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp\htdocs\FilmStream\system\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp\htdocs\FilmStream\app\Controllers\Admin_controllers\Movies_controller.php(134): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp\htdocs\FilmStream\system\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->filtro_genero_pelicula('accion')
+#8 C:\xampp\htdocs\FilmStream\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+#9 C:\xampp\htdocs\FilmStream\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\FilmStream\system\Boot.php(334): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\FilmStream\system\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp\htdocs\FilmStream\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+CRITICAL - 2025-07-28 23:34:02 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pelicula_generos.serie_id' in 'where clause'
+[Method: GET, Route: peliculas/genero/accion]
+in SYSTEMPATH\Database\BaseConnection.php on line 692.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pelicula_generos`.`movie_id`, `generos`.`nombre`, `generos`.`slug`
+FROM `pelicula_generos`
+JOIN `generos` ON `generos`.`genero_id` = `pelicula_generos`.`genero_id`
+WHERE `pelicula_generos`.`serie_id` IN :pelicula_generos.serie_id:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\Admin_controllers\Movies_controller.php(134): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->filtro_genero_pelicula('accion')
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-28 23:34:02 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'pelicula_generos.serie_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pelicula_generos`.`movie_id`, `generos`.`nombre`, `generos`.`slug`
+FROM `pelicula_generos`
+JOIN `generos` ON `generos`.`genero_id` = `pelicula_generos`.`genero_id`
+WHERE `pelicula_generos`.`serie_id` IN (\'10\',\'7\',\'8\',\'9\',\'3\',\'6\',\'4\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pelicula_generos`.`movie_id`, `generos`.`nombre`, `generos`.`slug`
+FROM `pelicula_generos`
+JOIN `generos` ON `generos`.`genero_id` = `pelicula_generos`.`genero_id`
+WHERE `pelicula_generos`.`serie_id` IN (\'10\',\'7\',\'8\',\'9\',\'3\',\'6\',\'4\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pelicula_generos`.`movie_id`, `generos`.`nombre`, `generos`.`slug`
+FROM `pelicula_generos`
+JOIN `generos` ON `generos`.`genero_id` = `pelicula_generos`.`genero_id`
+WHERE `pelicula_generos`.`serie_id` IN :pelicula_generos.serie_id:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\Admin_controllers\Movies_controller.php(134): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->filtro_genero_pelicula('accion')
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+CRITICAL - 2025-07-28 23:34:02 --> [Caused by] mysqli_sql_exception: Unknown column 'pelicula_generos.serie_id' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT `pelicula_generos`.`movie_id`, `generos`.`nombre`, `generos`.`slug`
+FROM `pelicula_generos`
+JOIN `generos` ON `generos`.`genero_id` = `pelicula_generos`.`genero_id`
+WHERE `pelicula_generos`.`serie_id` IN (\'10\',\'7\',\'8\',\'9\',\'3\',\'6\',\'4\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(738): CodeIgniter\Database\MySQLi\Connection->execute('SELECT `pelicula_generos`.`movie_id`, `generos`.`nombre`, `generos`.`slug`
+FROM `pelicula_generos`
+JOIN `generos` ON `generos`.`genero_id` = `pelicula_generos`.`genero_id`
+WHERE `pelicula_generos`.`serie_id` IN (\'10\',\'7\',\'8\',\'9\',\'3\',\'6\',\'4\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(652): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT `pelicula_generos`.`movie_id`, `generos`.`nombre`, `generos`.`slug`
+FROM `pelicula_generos`
+JOIN `generos` ON `generos`.`genero_id` = `pelicula_generos`.`genero_id`
+WHERE `pelicula_generos`.`serie_id` IN (\'10\',\'7\',\'8\',\'9\',\'3\',\'6\',\'4\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT `pelicula_generos`.`movie_id`, `generos`.`nombre`, `generos`.`slug`
+FROM `pelicula_generos`
+JOIN `generos` ON `generos`.`genero_id` = `pelicula_generos`.`genero_id`
+WHERE `pelicula_generos`.`serie_id` IN :pelicula_generos.serie_id:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(679): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\Admin_controllers\Movies_controller.php(134): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->filtro_genero_pelicula('accion')
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-28 23:34:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+CRITICAL - 2025-07-28 23:34:17 --> ErrorException: Undefined variable $currentMoviesPage
+[Method: GET, Route: peliculas/genero/accion]
+in APPPATH\Views\front\peliculas.php on line 88.
+ 1 APPPATH\Views\front\peliculas.php(88): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined variable $currentMoviesPage', 'C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\peliculas.php', 88)
+ 2 SYSTEMPATH\View\View.php(224): include('C:\\xampp\\htdocs\\FilmStream\\app\\Views\\front\\peliculas.php')
+ 3 SYSTEMPATH\View\View.php(227): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1173): CodeIgniter\View\View->render('Views/front/peliculas', [], true)
+ 5 APPPATH\Controllers\Admin_controllers\Movies_controller.php(160): view('Views/front/peliculas', [...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\Admin_controllers\Movies_controller->filtro_genero_pelicula('accion')
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_controllers\Movies_controller))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(334): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+DEBUG - 2025-07-28 23:38:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:38:35 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:38:37 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:38:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:38:40 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:38:45 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:38:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-07-28 23:38:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.

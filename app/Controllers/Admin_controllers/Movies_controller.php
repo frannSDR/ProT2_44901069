@@ -88,6 +88,79 @@ class Movies_controller extends BaseController
             . view('Views/front/footer');
     }
 
+    public function filtro_genero_pelicula($slug = 'todas')
+    {
+        $moviesPage = $this->request->getVar('movies_page') ?? 1;
+        $moviesPerPage = 15;
+        $movieFilter = $this->request->getVar('movies_filter') ?? 'title';
+        $movieDirection = $this->request->getVar('movies_direction') ?? 'asc';
+        $movieDirection = strtoupper($movieDirection) === 'DESC' ? 'DESC' : 'ASC';
+
+        $moviesOrderBy = match ($movieFilter) {
+            'title' => 'titulo',
+            'release' => 'año',
+            'rating' => 'valoracion',
+            default => 'titulo'
+        };
+
+        // si el slug es 'todas', no filtramos por genero
+        if ($slug === 'todas') {
+            $movies = $this->movieModel
+                ->select('movie_id, titulo, año, poster, valoracion, activa')
+                ->orderBy($moviesOrderBy, $movieDirection)
+                ->paginate($moviesPerPage, 'movies', $moviesPage);
+        } else {
+            // filtrar por genero usando join y el slug
+            $movies = $this->movieModel
+                ->select('peliculas.movie_id, peliculas.titulo, peliculas.año, peliculas.poster, peliculas.valoracion, peliculas.activa')
+                ->join('pelicula_generos', 'peliculas.movie_id = pelicula_generos.movie_id')
+                ->join('generos', 'generos.genero_id = pelicula_generos.genero_id')
+                ->where('generos.slug', $slug)
+                ->orderBy($moviesOrderBy, $movieDirection)
+                ->paginate($moviesPerPage, 'movies', $moviesPage);
+        }
+
+        $moviesTotal = $this->movieModel->countAll();
+        $moviesTotalPages = ceil($moviesTotal / $moviesPerPage);
+
+        // traemos la info del genero de cada pelicula
+        $movieIds = array_column($movies, 'movie_id');
+        $generoPormovie = [];
+        if (!empty($movieIds)) {
+            $generos = $this->peliculaGeneroModel
+                ->select('pelicula_generos.movie_id, generos.nombre, generos.slug')
+                ->join('generos', 'generos.genero_id = pelicula_generos.genero_id')
+                ->whereIn('pelicula_generos.movie_id', $movieIds)
+                ->findAll();
+
+            foreach ($generos as $genero) {
+                $generoPormovie[$genero['movie_id']][] = [
+                    'nombre' => $genero['nombre'],
+                    'slug' => $genero['slug']
+                ];
+            }
+        }
+
+        foreach ($movies as &$movie) {
+            $movie['generos'] = $generoPormovie[$movie['movie_id']] ?? [];
+        }
+
+        $data = [
+            'titulo' => 'movies',
+            'movies' => $movies,
+            'currentMoviesPage' => $moviesPage,
+            'totalMoviesPage' => $moviesTotalPages,
+            'currentMovieFilter' => $movieFilter,
+            'currentDirection' => strtolower($movieDirection),
+            'generoActual' => $slug,
+            'pager' => $this->movieModel->pager
+        ];
+
+        return view('Views/front/navbar', $data)
+            . view('Views/front/peliculas', $data)
+            . view('Views/front/footer');
+    }
+
     public function movie_detail($id = null)
     {
         $movie = $this->movieModel->find($id);

@@ -13,12 +13,16 @@
         <div class="media-filter-group">
             <h4><i class="fas fa-tags"></i> Géneros</h4>
             <ul class="filter-list">
-                <li><a href="#" class="active">Todas</a></li>
-                <li><a href="#">Acción</a></li>
-                <li><a href="#">Ciencia Ficción</a></li>
-                <li><a href="#">Drama</a></li>
-                <li><a href="#">Comedia</a></li>
-                <li><a href="#">Terror</a></li>
+                <li><a href="<?= base_url('peliculas/genero/todas') ?>" <?= ($generoActual ?? '') === 'todas' ? 'class=active' : '' ?>>Todas</a></li>
+                <li><a href="<?= base_url('peliculas/genero/accion') ?>" <?= ($generoActual ?? '') === 'accion' ? 'class=active' : '' ?>>Acción</a></li>
+                <li><a href="<?= base_url('peliculas/genero/scifi') ?>" <?= ($generoActual ?? '') === 'scifi' ? 'class=active' : '' ?>>Ciencia Ficción</a></li>
+                <li><a href="<?= base_url('peliculas/genero/drama') ?>" <?= ($generoActual ?? '') === 'drama' ? 'class=active' : '' ?>>Drama</a></li>
+                <li><a href="<?= base_url('peliculas/genero/comedia') ?>" <?= ($generoActual ?? '') === 'comedia' ? 'class=active' : '' ?>>Comedia</a></li>
+                <li><a href="<?= base_url('peliculas/genero/terror') ?>" <?= ($generoActual ?? '') === 'terror' ? 'class=active' : '' ?>>Terror</a></li>
+                <li><a href="<?= base_url('peliculas/genero/anime') ?>" <?= ($generoActual ?? '') === 'anime' ? 'class=active' : '' ?>>Anime</a></li>
+                <li><a href="<?= base_url('peliculas/genero/suspenso') ?>" <?= ($generoActual ?? '') === 'suspenso' ? 'class=active' : '' ?>>Thriller</a></li>
+                <li><a href="<?= base_url('peliculas/genero/terror') ?>" <?= ($generoActual ?? '') === 'aventura' ? 'class=active' : '' ?>>Aventura</a></li>
+                <li><a href="<?= base_url('peliculas/genero/fantasia') ?>" <?= ($generoActual ?? '') === 'fantasia' ? 'class=active' : '' ?>>Fantasia</a></li>
             </ul>
         </div>
 
@@ -27,9 +31,11 @@
             <h4><i class="fas fa-calendar-alt"></i> Año</h4>
             <select class="form-select">
                 <option selected>Todos</option>
-                <option>2020 - 2023</option>
+                <option>2020 - 2025</option>
                 <option>2010 - 2019</option>
                 <option>2000 - 2009</option>
+                <option>1990 - 1999</option>
+                <option>1980 - 1989</option>
             </select>
         </div>
 
@@ -37,7 +43,7 @@
         <div class="media-filter-group">
             <h4><i class="fas fa-star"></i> Valoracion Minima</h4>
             <div class="rating-filter">
-                <input type="range" min="0" max="10" value="7" step="0.5">
+                <input type="range" min="0" max="10" value="7" step="1">
                 <span>7+</span>
             </div>
         </div>

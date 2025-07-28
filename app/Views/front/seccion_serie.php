@@ -23,7 +23,7 @@
                     <div class="movie-details">
                         <div class="movie-section-meta">
                             <span class="meta-item"><i class="fas fa-calendar-alt"></i> <?= $serie['año_inicio'] ?></span>
-                            <span class="meta-item"><i class="fas fa-film"></i> <?= $serie['temporadas'] ?? '' ?> temporadas</span>
+                            <span class="meta-item"><i class="fas fa-film"></i> <?= $serie['temporadas'] ?? '' ?> temporada<?= $serie['temporadas'] > 1 ? 's' : '' ?></span>
                             <span class="meta-item"><i class="fas fa-video"></i> <?= esc($serie['director'] ?? 'No especificado') ?></span>
                             <span class="meta-item"><i class="fas fa-users"></i> <?= esc($serie['reparto']) ?></span>
                             <span class="meta-item"><i class="fas fa-tags"></i>
@@ -85,10 +85,10 @@
                     <!-- Controles principales en una sola línea -->
                     <div class="player-controls">
                         <div class="season-selector-compact">
-                            <label>Temporada:</label>
+                            <label>Selecciona:</label>
                             <select id="season-select" class="season-select-modern">
                                 <?php foreach ($temporadas as $temporada): ?>
-                                    <option value="<?= $temporada['numero_temporada'] ?>">T<?= $temporada['numero_temporada'] ?></option>
+                                    <option value="<?= $temporada['numero_temporada'] ?>">Temporada <?= $temporada['numero_temporada'] ?></option>
                                 <?php endforeach; ?>
                             </select>
                         </div>

@@ -94,6 +94,83 @@ class Series_controller extends BaseController
             . view('Views/front/footer');
     }
 
+    //** metodo para poder filtrar las series por genero */
+
+    public function filtro_genero_serie($slug = 'todas')
+    {
+        $seriesPage = $this->request->getVar('series_page') ?? 1;
+        $seriesPerPage = 15;
+        $serieFilter = $this->request->getVar('series_filter') ?? 'title';
+        $serieDirection = $this->request->getVar('series_direction') ?? 'asc';
+        $serieDirection = strtoupper($serieDirection) === 'DESC' ? 'DESC' : 'ASC';
+
+        $seriesOrderBy = match ($serieFilter) {
+            'title' => 'titulo',
+            'release' => 'año_inicio',
+            'rating' => 'valoracion',
+            default => 'titulo'
+        };
+
+        // si el slug es 'todas', no filtramos por genero
+        if ($slug === 'todas') {
+            $series = $this->serieModel
+                ->select('serie_id, titulo, año_inicio, año_fin, poster, temporadas, valoracion, estado, activa')
+                ->orderBy($seriesOrderBy, $serieDirection)
+                ->paginate($seriesPerPage, 'series', $seriesPage);
+        } else {
+            // filtrar por genero usando join y el slug
+            $series = $this->serieModel
+                ->select('series.serie_id, series.titulo, series.año_inicio, series.año_fin, series.poster, series.temporadas, series.valoracion, series.estado, series.activa')
+                ->join('serie_generos', 'series.serie_id = serie_generos.serie_id')
+                ->join('generos', 'generos.genero_id = serie_generos.genero_id')
+                ->where('generos.slug', $slug)
+                ->orderBy($seriesOrderBy, $serieDirection)
+                ->paginate($seriesPerPage, 'series', $seriesPage);
+        }
+
+        $seriesTotal = $this->serieModel->countAll();
+        $seriesTotalPages = ceil($seriesTotal / $seriesPerPage);
+
+        // traemos la info del genero de cada serie
+        $serieIds = array_column($series, 'serie_id');
+        $generoPorSerie = [];
+        if (!empty($serieIds)) {
+            $generos = $this->serieGeneroModel
+                ->select('serie_generos.serie_id, generos.nombre, generos.slug')
+                ->join('generos', 'generos.genero_id = serie_generos.genero_id')
+                ->whereIn('serie_generos.serie_id', $serieIds)
+                ->findAll();
+
+            foreach ($generos as $genero) {
+                $generoPorSerie[$genero['serie_id']][] = [
+                    'nombre' => $genero['nombre'],
+                    'slug' => $genero['slug']
+                ];
+            }
+        }
+
+        foreach ($series as &$serie) {
+            $serie['generos'] = $generoPorSerie[$serie['serie_id']] ?? [];
+        }
+
+        $data = [
+            'titulo' => 'Series',
+            'series' => $series,
+            'currentSeriesPage' => $seriesPage,
+            'totalSeriesPage' => $seriesTotalPages,
+            'currentSerieFilter' => $serieFilter,
+            'currentDirection' => strtolower($serieDirection),
+            'generoActual' => $slug,
+            'pager' => $this->serieModel->pager
+        ];
+
+        return view('Views/front/navbar', $data)
+            . view('Views/front/series', $data)
+            . view('Views/front/footer');
+    }
+
+    //** metodo para la pagina en detalle de cada serie */
+
     public function serie_detail($id = null)
     {
         $serie = $this->serieModel->find($id);
@@ -104,7 +181,7 @@ class Series_controller extends BaseController
             ->where('serie_generos.serie_id', $id)
             ->findAll();
 
-        // Obtener temporadas con episodios
+        // obtener temporadas con episodios
         $temporadas = $this->temporadaModel
             ->where('serie_id', $id)
             ->orderBy('numero_temporada', 'ASC')
