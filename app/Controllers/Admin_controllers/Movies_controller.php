@@ -109,6 +109,8 @@ class Movies_controller extends BaseController
                 ->select('movie_id, titulo, año, poster, valoracion, activa')
                 ->orderBy($moviesOrderBy, $movieDirection)
                 ->paginate($moviesPerPage, 'movies', $moviesPage);
+
+            $moviesTotal = $this->movieModel->countAll();
         } else {
             // filtrar por genero usando join y el slug
             $movies = $this->movieModel
@@ -118,9 +120,16 @@ class Movies_controller extends BaseController
                 ->where('generos.slug', $slug)
                 ->orderBy($moviesOrderBy, $movieDirection)
                 ->paginate($moviesPerPage, 'movies', $moviesPage);
+
+            // solo contamos las peliculas del genero filtrado
+            // Solo contar las películas del género filtrado
+            $moviesTotal = $this->movieModel
+                ->join('pelicula_generos', 'peliculas.movie_id = pelicula_generos.movie_id')
+                ->join('generos', 'generos.genero_id = pelicula_generos.genero_id')
+                ->where('generos.slug', $slug)
+                ->countAllResults();
         }
 
-        $moviesTotal = $this->movieModel->countAll();
         $moviesTotalPages = ceil($moviesTotal / $moviesPerPage);
 
         // traemos la info del genero de cada pelicula
